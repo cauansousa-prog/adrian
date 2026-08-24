@@ -4,538 +4,476 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Promotor Adrian | Eventos, Produção e Promoção</title>
-<meta name="description" content="Promotor Adrian atua em eventos, produção, recepção, coordenação, panfletagem, storymaker e ações promocionais. Entre em contato para eventos e parcerias.">
-<meta name="robots" content="index, follow">
+<meta name="description" content="Promotor Adrian atua em eventos, produção, recepção, coordenação, panfletagem, storymaker e ações promocionais.">
+<meta name="theme-color" content="#050505">
 
-<meta property="og:type" content="website">
+<!-- Open Graph -->
 <meta property="og:title" content="Promotor Adrian | Eventos, Produção e Promoção">
-<meta property="og:description" content="Promotor, produtor e profissional de eventos, atuando na criação, execução e divulgação de experiências que conectam marcas, público e eventos.">
-<meta property="og:image" content="img/14-adrian-fanta.jpeg">
+<meta property="og:description" content="Promotor Adrian atua em eventos, produção, recepção, coordenação, panfletagem, storymaker e ações promocionais.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/banner-hero.jpeg">
 <meta property="og:locale" content="pt_BR">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='%23f5f5f5' font-family='Arial,sans-serif' font-weight='900'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23050505'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial,sans-serif' font-weight='900' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="img/banner-hero.jpeg">
 
 <style>
-/* ============================================================
-   TOKENS — Preto / Branco / Cinza-prata
-   ============================================================ */
-:root{
-  --bg:            #0a0a0a;
-  --bg-alt:        #111111;
-  --card:          #151515;
-  --card-hover:    #1b1b1b;
-  --line:          rgba(255,255,255,.10);
-  --line-strong:   rgba(255,255,255,.28);
-
-  --white:         #f6f6f4;
-  --silver:        #b9b9b9;
-  --silver-dim:    #8a8a8a;
-  --muted:         #8f8f8f;
-  --muted-2:       #5a5a5a;
-
-  --accent-wpp:    #25D366;
-
-  --font-display:  'Anton', 'Arial Narrow', sans-serif;
-  --font-body:     'Inter', system-ui, sans-serif;
-  --font-mono:     'JetBrains Mono', monospace;
-
-  --space-1: 8px;  --space-2: 16px; --space-3: 24px; --space-4: 32px;
-  --space-5: 48px; --space-6: 64px; --space-7: 96px; --space-8: 140px;
-
-  --radius-s: 4px;  --radius-m: 12px; --radius-l: 22px;
-  --ease: cubic-bezier(.22,.68,0,1);
-  --container: 1200px;
-}
-
-*{box-sizing:border-box; margin:0; padding:0;}
+/* ============ RESET ============ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-@media (prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
-  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
 }
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;cursor:pointer;}
+ul{list-style:none;}
+
+/* ============ TOKENS ============ */
+:root{
+  --black-deep:#050505;
+  --black-2:#0B0B0B;
+  --gray-dark:#171717;
+  --gray:#666666;
+  --gray-light:#BDBDBD;
+  --white:#FFFFFF;
+  --border:rgba(255,255,255,.12);
+  --border-soft:rgba(255,255,255,.06);
+  --ff-display:'Manrope',sans-serif;
+  --ff-body:'Inter',sans-serif;
+  --ease:cubic-bezier(.16,.84,.44,1);
+  --container:1240px;
+}
+
 body{
-  background:var(--bg);
+  background:var(--black-deep);
   color:var(--white);
-  font-family:var(--font-body);
+  font-family:var(--ff-body);
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-img{max-width:100%; display:block;}
-.exp-thumb img,.gal-item img,.insta-tile img{object-fit:cover;}
-a{color:inherit; text-decoration:none;}
-ul{list-style:none;}
-button{font-family:inherit; cursor:pointer; background:none; border:none; color:inherit;}
-input, textarea, select{font-family:inherit; font-size:16px;}
 
-:focus-visible{outline:2px solid var(--white); outline-offset:3px; border-radius:3px;}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 32px;}
+@media(max-width:640px){.wrap{padding:0 20px;}}
 
-.container{max-width:var(--container); margin:0 auto; padding:0 var(--space-3);}
-@media(max-width:640px){.container{padding:0 var(--space-2);}}
-
-.section{padding:var(--space-8) 0;}
-@media(max-width:900px){.section{padding:var(--space-6) 0;}}
+section{position:relative;}
 
 .eyebrow{
-  font-family:var(--font-mono);
-  font-size:12px;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--silver);
-  display:flex; align-items:center; gap:10px;
-  margin-bottom:var(--space-2);
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--ff-body);font-size:12px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gray-light);
+  margin-bottom:18px;
 }
-.eyebrow::before{content:""; width:26px; height:1px; background:var(--silver-dim); display:inline-block;}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--gray-light);}
 
-h1,h2,h3,h4{
-  font-family:var(--font-display);
-  font-weight:400;
-  letter-spacing:.005em;
-  line-height:1.0;
-  text-transform:uppercase;
-  color:var(--white);
+h1,h2,h3,h4{font-family:var(--ff-display);font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;line-height:1.02;}
+
+.outline{
+  color:transparent;
+  -webkit-text-stroke:1.4px var(--white);
+  text-stroke:1.4px var(--white);
 }
-.section-title{font-size:clamp(2.1rem, 4.6vw, 3.2rem); margin-bottom:var(--space-2);}
-.section-sub{color:var(--muted); max-width:640px; font-size:1.02rem; margin-bottom:var(--space-5);}
-.section-head{margin-bottom:var(--space-5);}
 
-/* Signature: laminate "backstage pass" button */
+.section-title{font-size:clamp(32px,4.4vw,54px);margin-bottom:24px;}
+.section-sub{color:var(--gray-light);max-width:520px;font-size:16px;}
+
+.divider{height:1px;width:100%;background:var(--border-soft);}
+
+/* buttons */
 .btn{
-  position:relative;
-  display:inline-flex; align-items:center; gap:10px;
-  padding:16px 30px 16px 38px;
-  font-family:var(--font-display);
-  font-size:.98rem; letter-spacing:.05em; text-transform:uppercase;
-  border-radius:999px;
-  border:1px solid var(--line-strong);
-  background:transparent; color:var(--white);
-  transition:all .3s var(--ease);
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 30px;font-family:var(--ff-body);font-weight:600;font-size:13px;
+  letter-spacing:.08em;text-transform:uppercase;border-radius:2px;
+  border:1px solid transparent;transition:all .3s var(--ease);
   white-space:nowrap;
 }
-.btn::before{
-  content:""; position:absolute; left:14px; top:50%; transform:translateY(-50%);
-  width:7px; height:7px; border-radius:50%;
-  border:1px solid var(--silver); background:var(--bg);
-}
-.btn-solid{background:var(--white); color:#0a0a0a; border-color:var(--white); font-weight:700;}
-.header-cta .btn-solid,.mobile-drawer .btn-solid,.cta-actions .btn-solid{background:rgba(212,175,55,.08); color:#d4af37; border-color:#d4af37;}
-.btn-solid::before{background:#0a0a0a; border-color:#0a0a0a;}
-.btn:hover{border-color:var(--white); box-shadow:0 0 0 1px var(--white); transform:translateY(-2px);}
-.btn-solid:hover{box-shadow:0 12px 30px -10px rgba(255,255,255,.35);}
-.btn-ghost{border-color:var(--line);}
-.btn-wpp{border-color:rgba(37,211,102,.4); background:rgba(37,211,102,.06);}
-.btn-wpp:hover{border-color:var(--accent-wpp); box-shadow:0 0 0 1px var(--accent-wpp);}
-.btn-block{width:100%; justify-content:center;}
-@media(max-width:560px){
-  .btn{width:100%; justify-content:center; padding:14px 24px 14px 34px;}
-  .hero-actions,.cta-actions{gap:12px;}
-}
+.btn-primary{background:var(--white);color:var(--black-deep);}
+.btn-primary:hover{background:var(--gray-light);}
+.btn-outline{border-color:var(--border);color:var(--white);}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.05);}
+.btn:focus-visible{outline:2px solid var(--white);outline-offset:3px;}
 
-.reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
-.reveal.in{opacity:1; transform:translateY(0);}
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+.reveal-stagger > *{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.reveal-stagger.is-visible > *{opacity:1;transform:translateY(0);}
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.05s;}
+.reveal-stagger.is-visible > *:nth-child(2){transition-delay:.12s;}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.19s;}
+.reveal-stagger.is-visible > *:nth-child(4){transition-delay:.26s;}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.33s;}
+.reveal-stagger.is-visible > *:nth-child(6){transition-delay:.4s;}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.47s;}
+.reveal-stagger.is-visible > *:nth-child(8){transition-delay:.54s;}
 
-/* small pill / wristband tag */
-.tag-pill{
-  display:inline-flex; align-items:center; gap:8px;
-  font-family:var(--font-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--silver);
-  border:1px dashed var(--line-strong);
-  padding:6px 14px; border-radius:20px;
-}
-.tag-pill .chip-dot{width:5px; height:5px; border-radius:50%; background:var(--silver);}
-
-/* ============================================================
-   HEADER
-   ============================================================ */
-#site-header{
-  position:fixed; top:0; left:0; right:0; z-index:1000;
-  background:rgba(10,10,10,0);
+/* ============ HEADER ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:16px 0;
   border-bottom:1px solid transparent;
-  transition:background .4s var(--ease), border-color .4s var(--ease), padding .3s var(--ease);
-  padding:24px 0;
+  transition:background .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease), backdrop-filter .4s var(--ease);
 }
-#site-header.scrolled{
-  background:rgba(9,9,9,.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line); padding:15px 0;
+header.scrolled{
+  background:rgba(5,5,5,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom-color:var(--border-soft);
+  padding:11px 0;
 }
-#site-header .container{display:flex; align-items:center; justify-content:space-between;}
-.brand{font-family:var(--font-display); font-size:1.4rem; letter-spacing:.06em; display:flex; align-items:center; gap:9px;}
-.brand .dot{width:6px; height:6px; border-radius:50%; background:var(--white);}
-nav.main-nav{display:flex; align-items:center; gap:var(--space-4);}
-nav.main-nav ul{display:flex; gap:26px;}
-nav.main-nav a{font-size:.85rem; letter-spacing:.03em; color:var(--muted); position:relative; padding:6px 0; transition:color .25s;}
-nav.main-nav a:hover, nav.main-nav a:focus-visible{color:var(--white);}
-nav.main-nav a::after{content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--white); transition:width .3s var(--ease);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.brand{font-family:var(--ff-display);font-weight:800;font-size:12px;line-height:1.25;letter-spacing:.03em;text-transform:uppercase;}
+.brand span{display:block;color:var(--gray-light);font-weight:600;}
+nav.main-nav{display:flex;gap:24px;}
+nav.main-nav a{
+  font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--gray-light);position:relative;padding:4px 0;transition:color .25s var(--ease);
+}
+nav.main-nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--white);transition:width .3s var(--ease);}
+nav.main-nav a:hover{color:var(--white);}
 nav.main-nav a:hover::after{width:100%;}
-.header-cta{display:flex; align-items:center; gap:18px;}
-.hamburger{display:none; flex-direction:column; gap:5px; padding:10px; z-index:1001;}
-.hamburger span{width:24px; height:2px; background:var(--white); transition:.3s;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.header-actions{display:flex;align-items:center;gap:14px;}
+.header-actions .btn-outline.desktop-only{
+  padding:10px 18px;font-size:10.5px;letter-spacing:.06em;
+}
+.hamburger{display:flex;width:20px;height:14px;position:relative;background:none;border:none;z-index:1200;flex-shrink:0;}
+.hamburger span{position:absolute;left:0;width:100%;height:1.3px;background:var(--white);transition:transform .3s var(--ease),opacity .3s var(--ease);}
+.hamburger span:nth-child(1){top:0;}
+.hamburger span:nth-child(2){top:6px;}
+.hamburger span:nth-child(3){top:12px;}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 
-.mobile-drawer{
-  position:fixed; top:70px; left:18px; right:18px; z-index:999; background:rgba(8,8,8,.98);
-  display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start; gap:4px;
-  padding:14px; border:1px solid var(--line-strong); border-radius:16px; box-shadow:0 18px 50px rgba(0,0,0,.5);
-  transform:translateY(-100%); transition:transform .45s var(--ease);
+.mobile-nav{
+  position:fixed;inset:0;background:var(--black-deep);z-index:1100;
+  display:flex;flex-direction:column;justify-content:center;gap:6px;padding:90px 32px 32px;
+  transform:translateY(-100%);
+  visibility:hidden;
+  pointer-events:none;
+  overflow-y:auto;
+  transition:transform .5s var(--ease), visibility 0s linear .5s;
 }
-.mobile-drawer.open{transform:translateY(0);}
-.mobile-drawer a:not(.btn){font-family:var(--font-display); font-size:1.1rem; letter-spacing:.03em; color:var(--white); padding:9px 12px; border-bottom:1px solid var(--line);}
-.mobile-drawer a:hover{color:var(--silver);}
-.mobile-drawer .btn{width:auto; align-self:center; margin-top:10px !important; padding:11px 18px; font-size:.86rem;}
+.mobile-nav.open{
+  transform:translateY(0);
+  visibility:visible;
+  pointer-events:auto;
+  transition:transform .5s var(--ease), visibility 0s linear 0s;
+}
+.mobile-nav a{font-family:var(--ff-display);font-size:clamp(22px,7vw,34px);font-weight:800;text-transform:uppercase;padding:10px 0;border-bottom:1px solid var(--border-soft);}
+.mobile-nav .btn{margin-top:24px;align-self:flex-start;}
 
-@media(max-width:880px){
-  nav.main-nav ul, #site-header .header-cta .btn{display:none;}
-  .hamburger{display:flex;}
-}
-@media(max-width:560px){
-  #site-header{padding:14px 0;}
-  .brand{font-size:1.05rem;}
-  .header-cta{gap:4px;}
+@media(max-width:900px){
+  nav.main-nav{display:none;}
+  .header-actions .btn-outline.desktop-only{display:none;}
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{position:relative; min-height:100svh; display:flex; align-items:flex-end; overflow:hidden;}
-.hero-media{position:absolute; inset:0; z-index:0;}
-.hero-media img{width:100%; height:100%; object-fit:cover; object-position:56% 72%; transform:scale(1.08); animation:heroZoom 16s ease-out forwards;}
-@keyframes heroZoom{to{transform:scale(1);}}
-.hero-media::after{
-  content:"";
-  position:absolute; inset:0;
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:flex-end;
+  position:relative;
+  overflow:hidden;
+  padding-top:96px;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;object-position:75% 20%;
+  filter:contrast(1.08);
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
   background:
-    linear-gradient(0deg, rgba(6,6,6,.97) 6%, rgba(6,6,6,.68) 36%, rgba(6,6,6,.34) 62%, rgba(6,6,6,.5) 100%),
-    linear-gradient(100deg, rgba(6,6,6,.5) 0%, rgba(6,6,6,0) 55%);
+    linear-gradient(90deg, rgba(5,5,5,.97) 0%, rgba(5,5,5,.82) 30%, rgba(5,5,5,.25) 58%, rgba(5,5,5,.05) 75%),
+    linear-gradient(0deg, rgba(5,5,5,1) 0%, rgba(5,5,5,.15) 38%, rgba(5,5,5,.35) 100%);
 }
-.hero-content{position:relative; z-index:1; width:100%; padding-bottom:var(--space-7); padding-top:190px;}
-.hero-eyebrow{
-  font-family:var(--font-mono); color:var(--silver); letter-spacing:.28em; font-size:11.5px; text-transform:uppercase;
-  margin-bottom:var(--space-3); display:flex; align-items:center; gap:12px;
+.hero-lines{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;}
+.hero-lines svg{width:100%;height:100%;}
+.hero-content{position:relative;z-index:2;width:100%;padding-bottom:80px;}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;}
+.hero-title{font-size:clamp(46px,7.4vw,104px);margin:18px 0 22px;}
+.hero-title .line{display:block;}
+.hero-text{color:var(--gray-light);max-width:440px;font-size:16px;margin-bottom:34px;}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
+.hero-since{display:flex;align-items:center;gap:16px;}
+.hero-since .label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);}
+.hero-since .value{font-family:var(--ff-display);font-weight:800;font-size:22px;letter-spacing:.05em;}
+.hero-social{
+  display:flex;flex-direction:column;gap:16px;align-items:flex-end;
+  justify-self:end;
 }
-.hero-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--white); animation:pulse 1.8s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
-.hero h1{font-size:clamp(2.4rem, 7.4vw, 5.6rem); max-width:20ch; color:var(--white); text-shadow:0 4px 40px rgba(0,0,0,.6);}
-.hero-sub{margin-top:var(--space-3); max-width:50ch; color:var(--muted); font-size:clamp(1rem,2vw,1.15rem);}
-.hero-actions{display:flex; gap:18px; flex-wrap:wrap; margin-top:var(--space-5);}
-.hero-badge{
-  margin-top:var(--space-6); display:inline-flex; align-items:center; gap:12px;
-  font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2);
-  border-top:1px solid var(--line); padding-top:16px;
+.hero-social a{
+  display:flex;align-items:center;gap:10px;font-size:12px;color:var(--gray-light);
+  border:1px solid var(--border);padding:10px 16px;border-radius:2px;transition:all .3s var(--ease);
 }
-.hero-badge strong{color:var(--silver); font-weight:500;}
-.scroll-hint{
-  position:absolute; right:var(--space-3); bottom:var(--space-3); z-index:1;
-  writing-mode:vertical-rl; font-family:var(--font-mono); font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted-2);
-  display:flex; align-items:center; gap:10px;
+.hero-social a:hover{border-color:var(--white);color:var(--white);}
+.hero-social svg{width:15px;height:15px;flex-shrink:0;}
+.scroll-cue{
+  position:absolute;left:32px;bottom:26px;z-index:2;
+  display:flex;align-items:center;gap:10px;color:var(--gray);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;
 }
-.scroll-hint .line{width:1px; height:52px; background:linear-gradient(var(--silver),transparent);}
-@media(max-width:640px){.scroll-hint{display:none;}}
+.scroll-cue::after{content:'';width:1px;height:40px;background:linear-gradient(var(--gray),transparent);animation:scrollpulse 2.2s ease-in-out infinite;}
+@keyframes scrollpulse{0%,100%{opacity:.3;}50%{opacity:1;}}
 
-/* ============================================================
-   PROCESS STRIP
-   ============================================================ */
-.process-strip{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:26px 0; overflow:hidden;}
-.process-track{display:flex; align-items:center; gap:14px; font-family:var(--font-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); flex-wrap:wrap; justify-content:center;}
-.process-track b{color:var(--white); font-weight:500;}
-.process-track .arrow{color:var(--muted-2);}
-
-/* ============================================================
-   SOBRE
-   ============================================================ */
-.sobre-grid{display:grid; grid-template-columns:.82fr 1.18fr; gap:var(--space-7); align-items:center;}
-@media(max-width:900px){.sobre-grid{grid-template-columns:1fr; gap:var(--space-5);}}
-
-.credential{position:relative; max-width:380px; margin:0 auto;}
-.credential-card{position:relative; border-radius:var(--radius-l); overflow:hidden; border:1px solid var(--line-strong); background:var(--card); box-shadow:0 40px 90px -30px rgba(0,0,0,.8);}
-.credential-photo{aspect-ratio:3/4; overflow:hidden; position:relative;}
-.credential-photo img{width:100%; height:100%; object-fit:cover; filter:grayscale(.15) contrast(1.05);}
-.credential-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(8,8,8,.94) 0%, rgba(8,8,8,0) 42%);}
-.credential-strip{position:absolute; left:0; right:0; bottom:0; padding:20px 22px 22px; z-index:2;}
-.credential-strip .role{font-family:var(--font-mono); color:var(--silver); font-size:10px; letter-spacing:.2em; text-transform:uppercase; margin-bottom:4px;}
-.credential-strip .name{font-family:var(--font-display); font-size:1.8rem; letter-spacing:.03em; color:var(--white);}
-.credential-punch{position:absolute; top:22px; left:50%; transform:translateX(-50%); width:16px; height:16px; border-radius:50%; background:var(--bg); border:1px solid var(--line-strong); z-index:3;}
-.credential-perf{position:absolute; top:44px; left:0; right:0; border-top:1px dashed var(--line-strong); z-index:3;}
-.credential-tag{position:absolute; top:-14px; right:24px; z-index:4; background:var(--white); color:#0a0a0a; font-family:var(--font-mono); font-size:9.5px; letter-spacing:.12em; padding:6px 12px; border-radius:3px; font-weight:700; text-transform:uppercase; box-shadow:0 8px 22px -6px rgba(0,0,0,.6);}
-
-.sobre-text p{color:var(--muted); font-size:1.05rem; max-width:58ch; margin-bottom:var(--space-2);}
-.sobre-text p strong{color:var(--white); font-weight:700;}
-
-.timeline-mini{
-  display:flex; align-items:center; gap:18px; margin:var(--space-4) 0;
-  font-family:var(--font-mono); font-size:.95rem; letter-spacing:.04em;
+@media(max-width:900px){
+  .hero{padding-top:90px;align-items:flex-end;}
+  .hero-bg img{object-position:70% 15%;}
+  .hero-grid{grid-template-columns:1fr;gap:24px;}
+  .hero-social{align-items:flex-start;justify-self:start;flex-direction:row;flex-wrap:wrap;}
+  .hero-cta{margin-bottom:32px;}
+  .scroll-cue{display:none;}
 }
-.timeline-mini .pt{display:flex; align-items:center; gap:10px; color:var(--white); font-weight:600;}
-.timeline-mini .pt::before{content:""; width:9px; height:9px; border-radius:50%; border:1px solid var(--white);}
-.timeline-mini .track{flex:1; height:1px; background:repeating-linear-gradient(90deg, var(--silver-dim) 0 6px, transparent 6px 12px); max-width:120px;}
-.timeline-mini .pt.now::before{background:var(--white);}
 
-.trait-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:var(--space-4);}
-@media(max-width:480px){.trait-grid{grid-template-columns:1fr;}}
-.trait{border:1px solid var(--line); border-radius:var(--radius-m); padding:20px; background:var(--card); transition:border-color .3s, transform .3s;}
-.trait:hover{border-color:var(--line-strong); transform:translateY(-4px);}
-.trait .num{font-family:var(--font-mono); font-size:11px; color:var(--silver); letter-spacing:.15em;}
-.trait h4{font-family:var(--font-body); font-weight:800; font-size:1rem; letter-spacing:0; text-transform:none; margin:8px 0 6px; color:var(--white);}
-.trait p{font-size:.9rem; color:var(--muted); margin:0;}
-
-/* ============================================================
-   DIFERENCIAIS (multifuncional chips)
-   ============================================================ */
-.diff-wrap{border:1px solid var(--line-strong); border-radius:var(--radius-l); padding:var(--space-6) var(--space-4); background:radial-gradient(ellipse at 50% -10%, rgba(255,255,255,.05), transparent 60%), var(--card); text-align:center;}
-.diff-wrap h3{font-size:clamp(1.7rem,3.6vw,2.5rem); margin-bottom:14px;}
-.diff-wrap > p{color:var(--muted); max-width:56ch; margin:0 auto var(--space-4);}
-.chip-row{display:flex; flex-wrap:wrap; justify-content:center; gap:12px;}
-.chip{
-  font-family:var(--font-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-  border:1px solid var(--line-strong); border-radius:24px; padding:10px 20px; color:var(--silver);
-  transition:all .3s var(--ease);
+/* ============ ABOUT ============ */
+.about{padding:150px 0;background:var(--black-deep);}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;}
+.about-frame{
+  position:relative;border:1px solid var(--border);padding:14px;
 }
-.chip:hover{color:var(--white); border-color:var(--white); background:rgba(255,255,255,.04);}
+.about-frame::before{
+  content:'';position:absolute;top:-14px;left:-14px;width:34px;height:34px;
+  border-top:1px solid var(--white);border-left:1px solid var(--white);
+}
+.about-frame::after{
+  content:'';position:absolute;bottom:-14px;right:-14px;width:34px;height:34px;
+  border-bottom:1px solid var(--white);border-right:1px solid var(--white);
+}
+.about-frame img{width:100%;height:640px;object-fit:cover;filter:contrast(1.05);}
+.about-title{font-size:clamp(30px,3.8vw,48px);margin-bottom:26px;}
+.about-text p{color:var(--gray-light);margin-bottom:16px;max-width:520px;}
+.about-timeline{
+  display:flex;align-items:center;gap:18px;margin:36px 0;padding:20px 0;
+  border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);
+}
+.about-timeline .tl-dot{width:9px;height:9px;border-radius:50%;background:var(--white);flex-shrink:0;}
+.about-timeline .tl-range{font-family:var(--ff-display);font-weight:800;letter-spacing:.04em;font-size:15px;}
+.about-timeline .tl-text{color:var(--gray-light);font-size:14px;}
+.about-diffs{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:36px;}
+.diff-item .diff-num{font-family:var(--ff-display);font-size:12px;color:var(--gray);letter-spacing:.1em;margin-bottom:8px;display:block;}
+.diff-item h4{font-size:15px;letter-spacing:.04em;margin-bottom:8px;}
+.diff-item p{color:var(--gray-light);font-size:14px;}
 
-/* ============================================================
-   SERVICOS
-   ============================================================ */
-.services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
-@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
+@media(max-width:900px){
+  .about{padding:100px 0;}
+  .about-grid{grid-template-columns:1fr;gap:44px;}
+  .about-frame img{height:420px;}
+  .about-diffs{grid-template-columns:1fr;}
+}
+
+/* ============ SERVICES ============ */
+.services{padding:150px 0;background:var(--black-2);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+.services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:60px;flex-wrap:wrap;}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border-soft);border-left:1px solid var(--border-soft);}
 .service-card{
-  border:1px solid var(--line); border-radius:var(--radius-m); padding:26px 22px; background:var(--card);
-  transition:transform .35s var(--ease), border-color .35s, background .35s;
-  position:relative; overflow:hidden; min-height:190px; display:flex; flex-direction:column;
+  border-right:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);
+  padding:38px 28px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;
+  transition:background .35s var(--ease);
 }
-.service-card:hover{transform:translateY(-6px); border-color:var(--line-strong); background:var(--card-hover);}
-.service-card .ic{width:42px; height:42px; border-radius:9px; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; color:var(--white); margin-bottom:16px;}
-.service-card h4{font-family:var(--font-body); font-weight:800; font-size:1rem; text-transform:none; letter-spacing:0; margin-bottom:8px; color:var(--white);}
-.service-card .desc{color:var(--muted); font-size:.86rem; max-height:0; opacity:0; overflow:hidden; transition:max-height .4s var(--ease), opacity .3s;}
-.service-card:hover .desc{max-height:80px; opacity:1;}
-.service-card .idx{position:absolute; top:16px; right:20px; font-family:var(--font-mono); font-size:10.5px; color:var(--muted-2);}
+.service-card:hover{background:rgba(255,255,255,.03);}
+.service-card .s-num{font-family:var(--ff-display);font-size:12px;color:var(--gray);}
+.service-card h3{font-size:19px;margin:26px 0 10px;letter-spacing:.02em;}
+.service-card p{color:var(--gray-light);font-size:14px;}
+@media(max-width:900px){.services{padding:90px 0;} .services-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
 
-/* ============================================================
-   EXPERIENCIAS
-   ============================================================ */
-.exp-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-@media(max-width:980px){.exp-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:620px){.exp-grid{grid-template-columns:1fr;}}
+/* ============ EXPERIENCES ============ */
+.experiences{padding:150px 0;}
+.exp-head{margin-bottom:56px;}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 .exp-card{
-  position:relative; border-radius:var(--radius-m); overflow:hidden; border:1px solid var(--line);
-  background:var(--card); cursor:pointer; transition:transform .4s var(--ease), border-color .4s;
+  position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--border-soft);
 }
-.exp-card:hover{transform:translateY(-6px); border-color:var(--line-strong);}
-.exp-card.wide{grid-column:span 2;}
-@media(max-width:620px){.exp-card.wide{grid-column:span 1;}}
-.exp-thumb{position:relative; aspect-ratio:3/4; overflow:hidden;}
-.exp-thumb img{width:100%; height:100%; transition:transform .7s var(--ease);}
-.exp-card:hover .exp-thumb img{transform:scale(1.07);}
-.exp-thumb::after{content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(6,6,6,.9) 0%, rgba(6,6,6,.05) 55%);}
-.exp-tag{position:absolute; top:14px; left:14px; z-index:2;}
-.exp-body{position:absolute; left:0; right:0; bottom:0; padding:18px 20px; z-index:2;}
-.exp-body .role{font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--silver); margin-bottom:4px;}
-.exp-body h4{font-family:var(--font-display); font-size:1.5rem; letter-spacing:.02em; margin-bottom:10px;}
-.exp-body .exp-btn{
-  display:inline-flex; align-items:center; gap:8px;
-  font-family:var(--font-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--white);
-  border-bottom:1px solid var(--line-strong); padding-bottom:3px;
+.exp-card img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05);transition:transform .7s var(--ease), filter .5s var(--ease);}
+.exp-card:hover img{transform:scale(1.06);filter:contrast(1.1);}
+.exp-overlay{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;
+  background:linear-gradient(0deg, rgba(5,5,5,.95) 0%, rgba(5,5,5,.35) 55%, rgba(5,5,5,0) 100%);
 }
+.exp-overlay .exp-name{font-family:var(--ff-display);font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:.01em;transform:translateY(6px);transition:transform .45s var(--ease);}
+.exp-overlay .exp-type{font-size:12px;color:var(--gray-light);letter-spacing:.06em;text-transform:uppercase;margin-top:6px;opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease), transform .45s var(--ease);}
+.exp-card:hover .exp-name{transform:translateY(0);}
+.exp-card:hover .exp-type{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.experiences{padding:90px 0;} .exp-grid{grid-template-columns:1fr 1fr;gap:16px;}}
+@media(max-width:560px){.exp-grid{grid-template-columns:1fr;}}
 
-/* Experience modal */
-.modal{position:fixed; inset:0; z-index:2100; background:rgba(4,4,4,.96); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .35s; padding:26px;}
-.modal.open{opacity:1; pointer-events:auto;}
-.modal-panel{max-width:900px; width:100%; max-height:88vh; overflow-y:auto; background:var(--bg-alt); border:1px solid var(--line-strong); border-radius:var(--radius-l);}
-.modal-hero{position:relative; aspect-ratio:16/8; overflow:hidden;}
-.modal-hero img{width:100%; height:100%; object-fit:cover;}
-.modal-close{position:absolute; top:18px; right:18px; z-index:3; width:44px; height:44px; border-radius:50%; border:1px solid var(--line-strong); background:rgba(8,8,8,.6); color:var(--white); display:flex; align-items:center; justify-content:center;}
-.modal-close:hover{border-color:var(--white);}
-.modal-body{padding:var(--space-4) var(--space-5) var(--space-5);}
-.modal-body .role{font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--silver); margin-bottom:8px;}
-.modal-body h3{font-size:clamp(1.7rem,4vw,2.4rem); margin-bottom:14px;}
-.modal-body p{color:var(--muted); max-width:64ch; margin-bottom:var(--space-3);}
-.modal-gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:var(--space-2);}
-@media(max-width:560px){.modal-gallery{grid-template-columns:repeat(2,1fr);}}
-.modal-gallery img{aspect-ratio:1; object-fit:cover; border-radius:8px; border:1px solid var(--line);}
-.modal-video{margin-top:var(--space-3);}
-.modal-video video{width:100%; border-radius:10px; border:1px solid var(--line-strong);}
+/* ============ GALLERY ============ */
+.gallery{padding:150px 0;background:var(--black-2);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+.gallery-head{margin-bottom:50px;}
+.masonry{columns:4 220px;column-gap:16px;}
+@media(max-width:900px){.masonry{columns:2 180px;}}
+.masonry figure{break-inside:avoid;margin:0 0 16px;overflow:hidden;position:relative;border:1px solid var(--border-soft);cursor:zoom-in;}
+.masonry img{width:100%;display:block;filter:contrast(1.05);transition:transform .6s var(--ease), filter .4s var(--ease);}
+.masonry figure:hover img{transform:scale(1.05);filter:none;}
+@media(max-width:900px){.gallery{padding:90px 0;}}
 
-/* ============================================================
-   GALERIA — editorial assimétrica
-   ============================================================ */
-.gal-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  grid-auto-rows:150px;
-  gap:12px;
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(5,5,5,.97);z-index:2000;display:none;align-items:center;justify-content:center;padding:40px;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:80vh;object-fit:contain;}
+.lightbox-close,.lightbox-prev,.lightbox-next{
+  position:absolute;background:none;border:1px solid var(--border);color:var(--white);
+  width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s var(--ease);
 }
-@media(max-width:900px){.gal-grid{grid-template-columns:repeat(3,1fr); grid-auto-rows:120px;}}
-@media(max-width:600px){.gal-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px;}}
-.gal-item{position:relative; border-radius:var(--radius-s); overflow:hidden; cursor:pointer; border:1px solid var(--line);}
-.gal-item img{width:100%; height:100%; transition:transform .6s var(--ease);}
-.gal-item:hover img{transform:scale(1.08);}
-.gal-item .overlay{position:absolute; inset:0; background:linear-gradient(0deg, rgba(6,6,6,.85), transparent 55%); opacity:0; transition:opacity .35s; display:flex; align-items:flex-end; padding:14px;}
-.gal-item:hover .overlay{opacity:1;}
-.gal-item .cap{font-family:var(--font-mono); font-size:10px; letter-spacing:.08em; color:var(--white); text-transform:uppercase;}
-.gal-item .zoom{position:absolute; top:12px; right:12px; width:30px; height:30px; border-radius:50%; background:rgba(8,8,8,.55); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; color:var(--white); opacity:0; transform:scale(.7); transition:.3s;}
-.gal-item:hover .zoom{opacity:1; transform:scale(1);}
+.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{border-color:var(--white);background:rgba(255,255,255,.08);}
+.lightbox-close{top:24px;right:24px;}
+.lightbox-prev{left:24px;top:50%;transform:translateY(-50%);}
+.lightbox-next{right:24px;top:50%;transform:translateY(-50%);}
+.lightbox-counter{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.1em;color:var(--gray-light);}
+@media(max-width:640px){.lightbox-prev,.lightbox-next{width:38px;height:38px;} .lightbox{padding:16px;}}
 
-/* explicit editorial spans */
-.gs-a{grid-column:span 2; grid-row:span 2;}
-.gs-b{grid-column:span 1; grid-row:span 1;}
-.gs-c{grid-column:span 1; grid-row:span 2;}
-.gs-d{grid-column:span 2; grid-row:span 1;}
-@media(max-width:600px){.gs-a,.gs-c,.gs-d{grid-column:span 2; grid-row:span 1;}}
-
-.lightbox{position:fixed; inset:0; z-index:2000; background:rgba(4,4,4,.97); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .35s; padding:40px;}
-.lightbox.open{opacity:1; pointer-events:auto;}
-.lightbox img{max-width:min(90vw,780px); max-height:82vh; border-radius:8px; border:1px solid var(--line-strong);}
-.lightbox-close{position:absolute; top:26px; right:26px; width:46px; height:46px; border-radius:50%; border:1px solid var(--line-strong); background:transparent; color:var(--white); display:flex; align-items:center; justify-content:center;}
-.lightbox-close:hover{border-color:var(--white);}
-.lightbox-nav{position:absolute; top:50%; transform:translateY(-50%); width:50px; height:50px; border-radius:50%; border:1px solid var(--line-strong); background:rgba(8,8,8,.5); color:var(--white); display:flex; align-items:center; justify-content:center;}
-.lightbox-nav:hover{border-color:var(--white);}
-.lightbox-prev{left:20px;} .lightbox-next{right:20px;}
-@media(max-width:640px){.lightbox-nav{width:40px;height:40px;} .lightbox-close{width:40px;height:40px;top:14px;right:14px;}}
-
-/* ============================================================
-   VIDEOS
-   ============================================================ */
-.video-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
-@media(max-width:760px){.video-grid{grid-template-columns:1fr;}}
-.video-card{border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; background:var(--card); cursor:pointer; transition:transform .35s var(--ease), border-color .35s;}
-.video-card:hover{transform:translateY(-6px); border-color:var(--line-strong);}
-.video-thumb{position:relative; aspect-ratio:16/10; overflow:hidden;}
-.video-thumb img{width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease);}
-.video-card:hover .video-thumb img{transform:scale(1.06);}
-.video-thumb::after{content:""; position:absolute; inset:0; background:rgba(4,4,4,.35);}
-.play-btn{
-  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-  width:64px; height:64px; border-radius:50%; background:rgba(10,10,10,.55); backdrop-filter:blur(6px);
-  border:1px solid rgba(255,255,255,.5); display:flex; align-items:center; justify-content:center; z-index:2;
-  transition:transform .3s var(--ease), background .3s;
+/* ============ VIDEOS ============ */
+.videos{padding:150px 0;}
+.videos-head{margin-bottom:50px;}
+.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+.video-card{position:relative;border:1px solid var(--border-soft);aspect-ratio:16/9;overflow:hidden;cursor:pointer;}
+.video-card video{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);}
+.video-play{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(5,5,5,.35);transition:background .3s var(--ease);
 }
-.video-card:hover .play-btn{transform:translate(-50%,-50%) scale(1.1); background:rgba(255,255,255,.15);}
-.video-body{padding:18px 20px;}
-.video-body .role{font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--silver); margin-bottom:6px;}
-.video-body h4{font-family:var(--font-body); font-weight:800; font-size:1rem; text-transform:none; letter-spacing:0; color:var(--white); margin-bottom:6px;}
-.video-body p{font-size:.86rem; color:var(--muted);}
-
+.video-card:hover .video-play{background:rgba(5,5,5,.15);}
+.video-play span{
+  width:70px;height:70px;border-radius:50%;border:1px solid var(--white);
+  display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease), background .35s var(--ease);
+  background:rgba(5,5,5,.4);
+}
+.video-card:hover .video-play span{transform:scale(1.1);background:var(--white);}
+.video-card:hover .video-play span svg{fill:var(--black-deep);}
+.video-meta{position:absolute;left:20px;bottom:16px;z-index:2;}
+.video-meta .v-name{font-family:var(--ff-display);font-weight:800;font-size:15px;text-transform:uppercase;}
+.video-meta .v-dur{font-size:11px;color:var(--gray-light);letter-spacing:.08em;}
 .video-empty{
-  border:1px dashed var(--line-strong); border-radius:var(--radius-m); padding:var(--space-5); text-align:center;
-  color:var(--muted); font-size:.92rem;
+  border:1px dashed var(--border);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  color:var(--gray);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:20px;
+}
+@media(max-width:900px){.videos{padding:90px 0;} .video-grid{grid-template-columns:1fr;}}
+
+.video-modal{position:fixed;inset:0;background:rgba(5,5,5,.97);z-index:2000;display:none;align-items:center;justify-content:center;padding:24px;}
+.video-modal.open{display:flex;}
+.video-modal video{max-width:90vw;max-height:82vh;}
+.video-modal .lightbox-close{top:24px;right:24px;}
+
+/* ============ INSTAGRAM ============ */
+.ig{padding:120px 0;background:var(--black-2);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+.ig-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.ig-handle{font-family:var(--ff-display);font-weight:800;font-size:clamp(26px,3vw,36px);margin:16px 0 22px;}
+.ig-text{color:var(--gray-light);max-width:420px;margin-bottom:28px;}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.ig-grid img{aspect-ratio:1/1;object-fit:cover;filter:contrast(1.05);transition:transform .5s var(--ease);}
+.ig-grid a:hover img{transform:scale(1.05);}
+@media(max-width:900px){.ig{padding:90px 0;} .ig-inner{grid-template-columns:1fr;gap:36px;}}
+
+/* ============ CTA ============ */
+.cta{padding:170px 0;text-align:center;position:relative;overflow:hidden;}
+.cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.05) 0%, transparent 60%);
+}
+.cta-inner{position:relative;max-width:760px;margin:0 auto;}
+.cta h2{font-size:clamp(38px,6vw,70px);}
+.cta-text{color:var(--gray-light);margin:26px auto 44px;max-width:520px;}
+.cta-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+@media(max-width:900px){.cta{padding:110px 0;}}
+
+/* ============ CONTACT ============ */
+.contact{padding:150px 0;background:var(--black-2);border-top:1px solid var(--border-soft);}
+.contact-grid{display:grid;grid-template-columns:1.3fr .8fr;gap:70px;}
+.contact h2{font-size:clamp(28px,3.6vw,42px);margin-bottom:40px;max-width:460px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+.form-group{margin-bottom:20px;display:flex;flex-direction:column;gap:8px;}
+.form-group label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-light);}
+.form-group input,.form-group select,.form-group textarea{
+  background:transparent;border:none;border-bottom:1px solid var(--border);
+  color:var(--white);font-family:var(--ff-body);font-size:15px;padding:12px 2px;
+  transition:border-color .3s var(--ease);
+}
+.form-group select option{background:var(--black-2);color:var(--white);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  outline:none;border-color:var(--white);
+}
+.form-group textarea{resize:vertical;min-height:100px;}
+.contact-form .btn{margin-top:12px;}
+.quick-contact{border-left:1px solid var(--border-soft);padding-left:50px;}
+.quick-contact h3{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-light);margin-bottom:28px;}
+.quick-item{display:flex;align-items:center;gap:14px;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border-soft);}
+.quick-item svg{width:20px;height:20px;flex-shrink:0;}
+.quick-item .qi-label{font-size:11px;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+.quick-item .qi-value{font-family:var(--ff-display);font-weight:700;font-size:16px;}
+@media(max-width:900px){
+  .contact{padding:100px 0;}
+  .contact-grid{grid-template-columns:1fr;gap:50px;}
+  .quick-contact{border-left:none;padding-left:0;border-top:1px solid var(--border-soft);padding-top:40px;}
+  .form-row{grid-template-columns:1fr;}
 }
 
-.video-modal-player{max-width:min(92vw,760px); width:100%;}
-.video-modal-player video{width:100%; border-radius:10px; border:1px solid var(--line-strong);}
-
-/* ============================================================
-   INSTAGRAM
-   ============================================================ */
-.insta-wrap{border:1px solid var(--line-strong); border-radius:var(--radius-l); padding:var(--space-6) var(--space-4); text-align:center; position:relative; overflow:hidden; background:radial-gradient(ellipse at 50% -10%, rgba(255,255,255,.05), transparent 60%), var(--card);}
-.insta-wrap h3{font-size:clamp(1.8rem,3.8vw,2.6rem); margin-bottom:10px;}
-.insta-wrap p{color:var(--muted); max-width:44ch; margin:0 auto var(--space-3);}
-.insta-handle{font-family:var(--font-mono); color:var(--silver); letter-spacing:.06em; font-size:.95rem; margin-bottom:var(--space-3);}
-.insta-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:var(--space-5);}
-@media(max-width:760px){.insta-grid{grid-template-columns:repeat(3,1fr);}}
-.insta-tile{aspect-ratio:1; border-radius:8px; overflow:hidden; border:1px solid var(--line); position:relative;}
-.insta-tile img{width:100%; height:100%; transition:transform .5s;}
-.insta-tile:hover img{transform:scale(1.1);}
-
-/* ============================================================
-   CTA GRANDE
-   ============================================================ */
-.cta-big{position:relative; border-radius:var(--radius-l); overflow:hidden; padding:var(--space-7) var(--space-4); text-align:center;}
-.cta-big-media{position:absolute; inset:0; z-index:0;}
-.cta-big-media img{width:100%; height:100%; object-fit:cover; object-position:50% 25%;}
-.cta-big-media::after{content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(4,4,4,.95), rgba(4,4,4,.78));}
-.cta-big-content{position:relative; z-index:1; max-width:720px; margin:0 auto;}
-.cta-big h2{font-size:clamp(1.9rem,4.6vw,3rem); margin-bottom:16px;}
-.cta-big p{color:var(--muted); margin-bottom:var(--space-4); font-size:1.05rem;}
-.cta-actions{display:flex; gap:18px; justify-content:center; flex-wrap:wrap;}
-
-/* ============================================================
-   FORM
-   ============================================================ */
-.form-wrap{display:grid; grid-template-columns:.85fr 1.15fr; gap:var(--space-7);}
-@media(max-width:900px){.form-wrap{grid-template-columns:1fr; gap:var(--space-5);}}
-.form-side h3{font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:14px;}
-.form-side p{color:var(--muted); margin-bottom:var(--space-4); max-width:44ch;}
-.contact-line{display:flex; gap:14px; align-items:center; margin-bottom:18px;}
-.contact-line .ic{width:42px; height:42px; border-radius:9px; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; color:var(--white); flex-shrink:0;}
-.contact-line .lbl{font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; color:var(--muted-2); text-transform:uppercase;}
-.contact-line .val{font-size:.98rem;}
-
-.field-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-@media(max-width:560px){.field-grid{grid-template-columns:1fr;}}
-.field{margin-bottom:18px; display:flex; flex-direction:column; gap:8px;}
-.field label{font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);}
-.field input, .field select, .field textarea{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-s); padding:14px 16px; color:var(--white); transition:border-color .25s, background .25s;}
-.field textarea{resize:vertical; min-height:110px;}
-.field input:focus, .field select:focus, .field textarea:focus{border-color:var(--white); background:var(--card-hover); outline:none;}
-.field input::placeholder, .field textarea::placeholder{color:var(--muted-2);}
-.form-success{display:none; align-items:center; gap:14px; border:1px solid rgba(37,211,102,.4); background:rgba(37,211,102,.07); border-radius:var(--radius-m); padding:18px 20px; margin-top:16px; color:#a9e8c4;}
-.form-success.show{display:flex;}
-.form-note{font-size:.78rem; color:var(--muted-2); margin-top:10px;}
-.form-alt{margin-top:16px; text-align:center; font-size:.85rem; color:var(--muted);}
-.form-alt a{color:var(--white); border-bottom:1px solid var(--line-strong);}
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer{border-top:1px solid var(--line); padding:var(--space-6) 0 var(--space-4); background:var(--bg-alt);}
-.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:var(--space-5); padding-bottom:var(--space-5);}
-@media(max-width:760px){.footer-grid{grid-template-columns:1fr; gap:var(--space-4);}}
-.footer-brand{display:flex; align-items:center; gap:9px; font-family:var(--font-display); font-size:1.4rem; letter-spacing:.05em; margin-bottom:10px;}
-.footer-tagline{font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--silver); margin-bottom:14px;}
-.footer-grid p{color:var(--muted); font-size:.9rem; max-width:36ch;}
-.footer-col h5{font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2); margin-bottom:16px;}
-.footer-col ul{display:flex; flex-direction:column; gap:10px;}
-.footer-col a{color:var(--muted); font-size:.92rem; transition:color .25s;}
+/* ============ FOOTER ============ */
+footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:56px;}
+.footer-brand{font-family:var(--ff-display);font-weight:800;font-size:22px;letter-spacing:.02em;text-transform:uppercase;margin-bottom:14px;}
+.footer-tag{color:var(--gray);font-size:13px;letter-spacing:.04em;}
+.footer-col h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray-light);margin-bottom:18px;}
+.footer-col a{display:block;color:var(--gray);font-size:14px;margin-bottom:12px;transition:color .25s var(--ease);}
 .footer-col a:hover{color:var(--white);}
-.footer-social{display:flex; gap:12px; margin-top:16px;}
-.footer-social a{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; color:var(--muted);}
-.footer-social a:hover{color:var(--white); border-color:var(--white);}
-.footer-bottom{border-top:1px solid var(--line); padding-top:var(--space-3); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:.82rem; color:var(--muted-2);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;border-top:1px solid var(--border-soft);flex-wrap:wrap;gap:12px;}
+.footer-bottom p{color:var(--gray);font-size:12px;}
+@media(max-width:700px){.footer-top{grid-template-columns:1fr;gap:32px;}}
 
-/* ============================================================
-   FLOATING WHATSAPP
-   ============================================================ */
-.fab-wpp{position:fixed; right:22px; bottom:22px; z-index:900; width:60px; height:60px; border-radius:50%; background:#25D366; color:#08150d; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px -8px rgba(37,211,102,.55); animation:fabPulse 2.6s infinite;}
-@keyframes fabPulse{0%,100%{box-shadow:0 12px 30px -8px rgba(37,211,102,.55);} 50%{box-shadow:0 12px 30px -8px rgba(37,211,102,.9), 0 0 0 10px rgba(37,211,102,.08);}}
-.fab-wpp:hover{transform:scale(1.07);}
-@media(max-width:560px){.fab-wpp{width:52px; height:52px; right:16px; bottom:16px;}}
+/* ============ WHATSAPP FLOAT ============ */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:900;
+  width:58px;height:58px;border-radius:50%;background:var(--white);color:var(--black-deep);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 30px rgba(0,0,0,.5);transition:transform .3s var(--ease);
+}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:26px;height:26px;}
 
-.center{text-align:center;} .mx-auto{margin-left:auto; margin-right:auto;}
+/* skip link */
+.skip-link{position:absolute;left:-999px;top:0;background:var(--white);color:var(--black-deep);padding:12px 18px;z-index:3000;font-size:13px;}
+.skip-link:focus{left:16px;top:16px;}
+
+:focus-visible{outline:2px solid var(--white);outline-offset:2px;}
 </style>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<header id="site-header">
-  <div class="container">
-    <a href="#inicio" class="brand"><span class="dot"></span> PROMOTOR ADRIAN</a>
+<a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#inicio" class="brand">PROMOTOR<span>ADRIAN</span></a>
     <nav class="main-nav" aria-label="Navegação principal">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#experiencias">Experiências</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#videos">Vídeos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#experiencias">Experiências</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#contato">Contato</a>
     </nav>
-    <div class="header-cta">
-      <a href="#contato" class="btn btn-solid" data-wpp="orcamento">Solicitar Orçamento</a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileDrawer">
+    <div class="header-actions">
+      <a class="btn btn-outline desktop-only" href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20evento." target="_blank" rel="noopener" aria-label="Solicitar orçamento via WhatsApp">Solicitar orçamento</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 
-<div class="mobile-drawer" id="mobileDrawer">
+<!-- mobile nav -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile">
   <a href="#inicio">Início</a>
   <a href="#sobre">Sobre</a>
   <a href="#servicos">Serviços</a>
@@ -543,578 +481,574 @@ footer{border-top:1px solid var(--line); padding:var(--space-6) 0 var(--space-4)
   <a href="#galeria">Galeria</a>
   <a href="#videos">Vídeos</a>
   <a href="#contato">Contato</a>
-  <a href="#contato" class="btn btn-solid" data-wpp="orcamento" style="margin-top:14px;">Solicitar Orçamento</a>
-</div>
+  <a href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20evento." target="_blank" rel="noopener" class="btn btn-primary">Solicitar orçamento</a>
+</nav>
 
-<!-- ================= HERO ================= -->
+<main id="main">
+
+<!-- ============ HERO ============ -->
 <section class="hero" id="inicio">
-  <div class="hero-media">
-    <img src="img/14-adrian-fanta.jpeg" alt="Adrian em ambiente de ativação de marca com iluminação de evento">
+  <div class="hero-bg">
+    <img src="img/banner-hero.jpeg" alt="Adrian Rodrigues, promotor de eventos, retrato em preto e branco" fetchpriority="high">
   </div>
-  <div class="hero-content container">
-    <div class="hero-eyebrow"><span class="dot"></span> Eventos · Produção · Promoção</div>
-    <h1 class="reveal">Eventos acontecem.<br>Experiências marcam.</h1>
-    <p class="hero-sub reveal">Promotor, produtor e profissional de eventos, atuando na criação, execução e divulgação de experiências que conectam marcas, público e eventos.</p>
-    <div class="hero-actions reveal">
-      <a href="#" class="btn btn-solid" data-wpp="contratar">Quero Contratar</a>
-      <a href="#experiencias" class="btn btn-ghost">Ver Experiências</a>
-    </div>
-    <div class="hero-badge reveal">
-      <span>Atuação profissional desde</span> <strong>01.2025</strong>
-    </div>
+  <div class="hero-lines" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <path d="M0,600 C300,500 500,700 1200,450" stroke="rgba(255,255,255,.08)" stroke-width="1" fill="none"/>
+      <path d="M0,680 C400,600 600,780 1200,560" stroke="rgba(255,255,255,.05)" stroke-width="1" fill="none"/>
+    </svg>
   </div>
-  <div class="scroll-hint"><span class="line"></span> Role para explorar</div>
-</section>
 
-<!-- ================= PROCESS STRIP ================= -->
-<div class="process-strip reveal">
-  <div class="container">
-    <div class="process-track">
-      <b>Promoção</b><span class="arrow">→</span><b>Experiência</b><span class="arrow">→</span><b>Produção</b><span class="arrow">→</span><b>Conexão</b><span class="arrow">→</span><b>Resultado</b>
-    </div>
-  </div>
-</div>
-
-<!-- ================= SOBRE ================= -->
-<section class="section" id="sobre">
-  <div class="container">
-    <div class="sobre-grid">
-      <div class="reveal">
-        <div class="credential">
-          <div class="credential-tag">Acesso Total</div>
-          <div class="credential-card">
-            <div class="credential-punch"></div>
-            <div class="credential-perf"></div>
-            <div class="credential-photo">
-              <img src="img/02-adrian-retrato.jpeg" alt="Adrian, profissional de eventos, com credencial de trabalho">
-              <div class="credential-strip">
-                <div class="role">Promotor de Eventos</div>
-                <div class="name">Adrian</div>
-              </div>
-            </div>
-          </div>
+  <div class="wrap hero-content">
+    <div class="hero-grid">
+      <div class="reveal is-visible">
+        <p class="eyebrow">Promotor • Produtor • Storymaker</p>
+        <h1 class="hero-title">
+          <span class="line">EVENTOS</span>
+          <span class="line">ACONTECEM.</span>
+          <span class="line outline">EXPERIÊNCIAS</span>
+          <span class="line outline">MARCAM.</span>
+        </h1>
+        <p class="hero-text">Atuando na criação, execução e divulgação de experiências que conectam marcas, público e eventos.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20em%20eventos." target="_blank" rel="noopener" class="btn btn-primary">Quero contratar</a>
+          <a href="#experiencias" class="btn btn-outline">Ver experiências</a>
+        </div>
+        <div class="hero-since">
+          <span class="label">Atuação profissional desde</span>
+          <span class="value">01.2025</span>
         </div>
       </div>
-      <div class="reveal">
-        <div class="eyebrow">Quem é</div>
-        <h2 class="section-title">Mais do que promoção. Presença.</h2>
-        <div class="sobre-text">
-          <p>Adrian atua no universo de eventos com experiência em diferentes frentes da operação, desde <strong>ações promocionais e panfletagem</strong> até <strong>recepção, coordenação, produção e criação de conteúdo</strong>.</p>
-          <p>Seu trabalho combina presença, organização, comunicação e execução para contribuir com experiências profissionais e marcantes — do primeiro contato com o público aos bastidores da produção.</p>
-        </div>
-        <div class="timeline-mini">
-          <span class="pt">01.2025</span>
-          <span class="track"></span>
-          <span class="pt now">Presente</span>
-        </div>
-        <div class="trait-grid">
-          <div class="trait"><div class="num">01</div><h4>Eventos</h4><p>Presença ativa em diferentes formatos de evento.</p></div>
-          <div class="trait"><div class="num">02</div><h4>Produção</h4><p>Atuação nos bastidores e suporte à execução.</p></div>
-          <div class="trait"><div class="num">03</div><h4>Recepção</h4><p>Atendimento e acolhimento do público.</p></div>
-          <div class="trait"><div class="num">04</div><h4>Conteúdo</h4><p>Registros e criação para redes sociais.</p></div>
-        </div>
+
+      <div class="hero-social reveal is-visible">
+        <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener" aria-label="Instagram de Adrian: @promovedor.adrian">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          @promovedor.adrian
+        </a>
+        <a href="https://wa.me/5585989229918" target="_blank" rel="noopener" aria-label="WhatsApp de Adrian">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.72-4.12-4.87-4.31-.14-.19-1.17-1.55-1.17-2.96s.73-2.1 1-2.39c.26-.28.57-.35.76-.35h.55c.18 0 .41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.52-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.55.73 1.82.86.27.14.44.2.51.31.07.12.07.65-.17 1.33z"/></svg>
+          Falar no WhatsApp
+        </a>
       </div>
     </div>
   </div>
+
+  <div class="scroll-cue">Role para explorar</div>
 </section>
 
-<!-- ================= DIFERENCIAIS ================= -->
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <div class="diff-wrap reveal">
-      <div class="eyebrow" style="justify-content:center;">Diferenciais</div>
-      <h3>Uma atuação multifuncional</h3>
-      <p>Um profissional preparado para atuar em diferentes momentos da experiência — do contato com o público aos bastidores da produção.</p>
-      <div class="chip-row">
-        <span class="chip">Promoção</span>
-        <span class="chip">Produção</span>
-        <span class="chip">Coordenação</span>
-        <span class="chip">Recepção</span>
-        <span class="chip">Conteúdo</span>
-        <span class="chip">Ativação</span>
+<!-- ============ ABOUT ============ -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-frame reveal">
+      <img src="img/foto-sobremin.jpeg" alt="Adrian Rodrigues em atuação profissional" loading="lazy">
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Sobre mim</p>
+      <h2 class="about-title">MAIS DO QUE PROMOÇÃO.<br><span class="outline">PRESENÇA.</span></h2>
+      <div class="about-text">
+        <p>Adrian atua no universo de eventos em diferentes frentes da operação, desde ações promocionais e panfletagem até recepção, coordenação, produção e criação de conteúdo.</p>
+        <p>Seu trabalho combina presença, organização, comunicação e execução para contribuir com experiências profissionais e marcantes.</p>
+      </div>
+
+      <div class="about-timeline">
+        <span class="tl-dot"></span>
+        <span class="tl-range">01.2025 → PRESENTE</span>
+        <span class="tl-text">Início da atuação profissional</span>
+      </div>
+
+      <div class="about-diffs">
+        <div class="diff-item"><span class="diff-num">01</span><h4>FOCO</h4><p>Compromisso com cada detalhe.</p></div>
+        <div class="diff-item"><span class="diff-num">02</span><h4>PRESENÇA</h4><p>Conexão real com público e marcas.</p></div>
+        <div class="diff-item"><span class="diff-num">03</span><h4>ORGANIZAÇÃO</h4><p>Planejamento e execução eficientes.</p></div>
+        <div class="diff-item"><span class="diff-num">04</span><h4>EXPERIÊNCIA</h4><p>Atuação em diferentes frentes de eventos.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICOS ================= -->
-<section class="section" id="servicos">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Atuação</div>
-      <h2 class="section-title">Em cada evento, uma função.<br>Em cada função, profissionalismo.</h2>
-      <p class="section-sub">Passe o cursor para saber mais sobre cada frente de atuação.</p>
+<!-- ============ SERVICES ============ -->
+<section class="services" id="servicos">
+  <div class="wrap">
+    <div class="services-head reveal">
+      <div>
+        <p class="eyebrow">Serviços</p>
+        <h2 class="section-title">EM CADA EVENTO,<br>UMA FUNÇÃO.</h2>
+      </div>
     </div>
-    <div class="services-grid" id="servicesGrid"></div>
+
+    <div class="services-grid reveal-stagger">
+      <div class="service-card"><span class="s-num">01</span><div><h3>Eventos</h3><p>Participação e atuação em eventos.</p></div></div>
+      <div class="service-card"><span class="s-num">02</span><div><h3>Panfletagem</h3><p>Ações de divulgação e contato com o público.</p></div></div>
+      <div class="service-card"><span class="s-num">03</span><div><h3>Recepção</h3><p>Atendimento e acolhimento do público.</p></div></div>
+      <div class="service-card"><span class="s-num">04</span><div><h3>Coordenação</h3><p>Organização e acompanhamento da execução.</p></div></div>
+      <div class="service-card"><span class="s-num">05</span><div><h3>Produção</h3><p>Atuação nos bastidores e suporte ao evento.</p></div></div>
+      <div class="service-card"><span class="s-num">06</span><div><h3>Storymaker</h3><p>Criação de conteúdos e registros para redes sociais.</p></div></div>
+      <div class="service-card"><span class="s-num">07</span><div><h3>Ações</h3><p>Ativações e experiências voltadas para marcas e público.</p></div></div>
+      <div class="service-card"><span class="s-num">08</span><div><h3>E muito mais</h3><p>Novas oportunidades, projetos e formatos de trabalho.</p></div></div>
+    </div>
   </div>
 </section>
 
-<!-- ================= EXPERIENCIAS ================= -->
-<section class="section" id="experiencias">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Portfólio</div>
-      <h2 class="section-title">Experiências que fizeram parte da trajetória</h2>
+<!-- ============ EXPERIENCES ============ -->
+<section class="experiences" id="experiencias">
+  <div class="wrap">
+    <div class="exp-head reveal">
+      <p class="eyebrow">Experiências</p>
+      <h2 class="section-title">EXPERIÊNCIAS QUE<br>FIZERAM PARTE DA<br><span class="outline">TRAJETÓRIA</span></h2>
       <p class="section-sub">Alguns dos eventos, ativações e experiências que fazem parte do trabalho de Adrian.</p>
     </div>
-    <div class="exp-grid" id="expGrid"></div>
+
+    <div class="exp-grid reveal-stagger" id="expGrid">
+      <!-- cards injected also directly for no-js fallback -->
+      <a class="exp-card" href="img/17-acao-publica-normatel-verdemares.jpeg" data-lightbox>
+        <img src="img/17-acao-publica-normatel-verdemares.jpeg" alt="Ação da Normatel e Verdes Mares" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Normatel & Verdes Mares</span><span class="exp-type">Ativação esportiva</span></div>
+      </a>
+      <a class="exp-card" href="img/18-promover-fanta.jpeg" data-lightbox>
+        <img src="img/18-promover-fanta.jpeg" alt="Ativação da marca Fanta" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Fanta</span><span class="exp-type">Ativação de marca</span></div>
+      </a>
+      <a class="exp-card" href="img/21-distribuicao-yopro.jpeg" data-lightbox>
+        <img src="img/21-distribuicao-yopro.jpeg" alt="Distribuição da marca Yopro" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Yopro</span><span class="exp-type">Distribuição / Divulgação</span></div>
+      </a>
+      <a class="exp-card" href="img/23-mascote-uninassau.jpeg" data-lightbox>
+        <img src="img/23-mascote-uninassau.jpeg" alt="Ação institucional Uninassau" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">UNINASSAU</span><span class="exp-type">Feira institucional</span></div>
+      </a>
+      <a class="exp-card" href="img/07-unifor-acao-entrega-bebida.jpeg" data-lightbox>
+        <img src="img/07-unifor-acao-entrega-bebida.jpeg" alt="Ação promocional Unifor" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Unifor</span><span class="exp-type">Ação promocional</span></div>
+      </a>
+      <a class="exp-card" href="img/04-corrida-tijucaalimentos.jpeg" data-lightbox>
+        <img src="img/04-corrida-tijucaalimentos.jpeg" alt="Corrida de rua Tijuca Alimentos" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Tijuca Alimentos</span><span class="exp-type">Corrida de rua</span></div>
+      </a>
+      <a class="exp-card" href="img/10-acao-restaurante-TURATTI.jpeg" data-lightbox>
+        <img src="img/10-acao-restaurante-TURATTI.jpeg" alt="Ação promocional Turatti Gastrobar" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Turatti – Gastrobar & Parrilla</span><span class="exp-type">Ação promocional</span></div>
+      </a>
+      <a class="exp-card" href="img/12-corrida-construcao.jpeg" data-lightbox>
+        <img src="img/12-corrida-construcao.jpeg" alt="Corrida da Construção" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Corrida da Construção</span><span class="exp-type">Recepção e organização</span></div>
+      </a>
+      <a class="exp-card" href="img/13-acao-loja-robo-star.jpeg" data-lightbox>
+        <img src="img/13-acao-loja-robo-star.jpeg" alt="Ativação Robô Star" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Robô Star</span><span class="exp-type">Ativação de loja</span></div>
+      </a>
+      <a class="exp-card" href="img/14-promover-wepink.jpeg" data-lightbox>
+        <img src="img/14-promover-wepink.jpeg" alt="Ativação da marca Wepink" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Wepink</span><span class="exp-type">Ativação de marca</span></div>
+      </a>
+      <a class="exp-card" href="img/15-promover-energetico-nightpower.jpeg" data-lightbox>
+        <img src="img/15-promover-energetico-nightpower.jpeg" alt="Divulgação Night Power" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Night Power</span><span class="exp-type">Degustação / Divulgação</span></div>
+      </a>
+      <a class="exp-card" href="img/09-mascote-supermercado-êxito.jpeg" data-lightbox>
+        <img src="img/09-mascote-supermecado-êxito.jpeg" alt="Ação promocional Supermercado Êxito" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Supermercado Êxito</span><span class="exp-type">Ações promocionais</span></div>
+      </a>
+      <a class="exp-card" href="img/30-acao-shein.png" data-lightbox>
+        <img src="img/30-acao-shein.png" alt="Ação promocional Shein" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Shein</span><span class="exp-type">Ação promocional</span></div>
+      </a>
+      <a class="exp-card" href="img/28-acao-nestonutri.png" data-lightbox>
+        <img src="img/28-acao-nestonutri.png" alt="Ação promocional Nestonutri" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Nestonutri</span><span class="exp-type">Ação promocional</span></div>
+      </a>
+      <a class="exp-card" href="img/27-acao-alares.png" data-lightbox>
+        <img src="img/27-acao-alares.png" alt="Ação promocional Alares" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Alares</span><span class="exp-type">Ação promocional</span></div>
+      </a>
+      <a class="exp-card" href="img/29-apresentacao-dialogo_sustentavel.png" data-lightbox>
+        <img src="img/29-apresentacao-dialogo_sustentavel.png" alt="Apresentação Diálogo Sustentável" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Diálogo Sustentável</span><span class="exp-type">Apresentação / Produção</span></div>
+      </a>
+      <a class="exp-card" href="img/25-apoio-casamento.jpeg" data-lightbox>
+        <img src="img/25-apoio-casamento.jpeg" alt="Apoio em evento de casamento" loading="lazy">
+        <div class="exp-overlay"><span class="exp-name">Casamento</span><span class="exp-type">Presença em evento particular</span></div>
+      </a>
+    </div>
   </div>
 </section>
 
-<div class="modal" id="expModal">
-  <div class="modal-panel">
-    <div class="modal-hero">
-      <img id="modalHeroImg" src="" alt="">
-      <button class="modal-close" id="modalClose" aria-label="Fechar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-    </div>
-    <div class="modal-body">
-      <div class="role" id="modalRole"></div>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDesc"></p>
-      <div class="modal-gallery" id="modalGallery"></div>
-      <div class="modal-video" id="modalVideoWrap" style="display:none;">
-        <video id="modalVideo" controls playsinline></video>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ================= GALERIA ================= -->
-<section class="section" id="galeria">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Registros reais</div>
-      <h2 class="section-title">Registros Reais</h2>
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="gallery-head reveal">
+      <p class="eyebrow">Galeria</p>
+      <h2 class="section-title">REGISTROS <span class="outline">REAIS</span></h2>
       <p class="section-sub">Momentos capturados durante eventos, ativações, ações e experiências.</p>
     </div>
-    <div class="gal-grid reveal" id="galGrid"></div>
+
+    <div class="masonry" id="galleryMasonry">
+      <figure data-lightbox><img src="img/02-adrian-retrato.jpeg" alt="Retrato de Adrian" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/03-adrian-colagem-eventos.jpeg" alt="Colagem de eventos com Adrian" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/16-adria-galeria.jpeg" alt="Registro de evento" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/01-inauguracao-com-robo.jpeg" alt="Inauguração com mascote robô" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/19-adrian-galeria-2.jpeg" alt="Registro de evento" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/05-adrian-mascote.jpeg" alt="Adrian com mascote em evento" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/24-adrian-galeria-3.jpeg" alt="Registro de evento" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/08-mascote-futebol.jpeg" alt="Ativação com mascote em evento esportivo" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/06-modelo-solar.jpeg" alt="Ação de divulgação" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/22-mascote-mascote-loja.jpeg" alt="Ativação com mascote em loja" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/11-mascote-supermercado-ana_Risorlange.jpeg" alt="Ativação em supermercado" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/26-apoio-promover-unifor.jpeg" alt="Ação promocional Unifor" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/20-distribuicao-nightpower.jpeg" alt="Distribuição Night Power" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/17-acao-publica-normatel-verdemares.jpeg" alt="Ação Normatel e Verdes Mares" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/18-promover-fanta.jpeg" alt="Ativação Fanta" loading="lazy"></figure>
+      <figure data-lightbox><img src="img/10-acao-restaurante-TURATTI.jpeg" alt="Ação Turatti" loading="lazy"></figure>
+    </div>
   </div>
 </section>
 
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lbClose" aria-label="Fechar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Imagem anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+<!-- Lightbox markup -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem em tela cheia">
+  <button class="lightbox-close" id="lbClose" aria-label="Fechar">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+  </button>
+  <button class="lightbox-prev" id="lbPrev" aria-label="Imagem anterior">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
   <img id="lbImg" src="" alt="">
-  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Próxima imagem"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  <button class="lightbox-next" id="lbNext" aria-label="Próxima imagem">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="lightbox-counter" id="lbCounter"></div>
 </div>
 
-<!-- ================= VIDEOS ================= -->
-<section class="section" id="videos">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Em movimento</div>
-      <h2 class="section-title">Em Movimento</h2>
+<!-- ============ VIDEOS ============ -->
+<section class="videos" id="videos">
+  <div class="wrap">
+    <div class="videos-head reveal">
+      <p class="eyebrow">Vídeos</p>
+      <h2 class="section-title">EM <span class="outline">MOVIMENTO</span></h2>
       <p class="section-sub">Porque alguns momentos não cabem em uma fotografia.</p>
     </div>
-    <div class="video-grid" id="videoGrid"></div>
+
+    <div class="video-grid reveal-stagger">
+      <div class="video-card" data-video="img/24-video-tijuca-alimentos.mp4" tabindex="0" role="button" aria-label="Reproduzir vídeo: Tijuca Alimentos">
+        <video src="img/24-video-tijuca-alimentos.mp4" muted playsinline preload="metadata"></video>
+        <div class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21"/></svg></span></div>
+        <div class="video-meta"><div class="v-name">Tijuca Alimentos</div><div class="v-dur">Corrida de rua · 00:11</div></div>
+      </div>
+      <div class="video-card" data-video="img/25-video-montage-eventos.mp4" tabindex="0" role="button" aria-label="Reproduzir vídeo: Montagem de eventos">
+        <video src="img/25-video-montage-eventos.mp4" muted playsinline preload="metadata"></video>
+        <div class="video-play"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21"/></svg></span></div>
+        <div class="video-meta"><div class="v-name">Montagem de Eventos</div><div class="v-dur">Registros gerais · 00:20</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="lightbox" id="videoModal">
-  <button class="lightbox-close" id="vmClose" aria-label="Fechar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-  <div class="video-modal-player"><video id="vmVideo" controls playsinline></video></div>
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Reprodução de vídeo">
+  <button class="lightbox-close" id="vmClose" aria-label="Fechar vídeo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+  </button>
+  <video id="vmVideo" controls playsinline></video>
 </div>
 
-<!-- ================= INSTAGRAM ================= -->
-<section class="section">
-  <div class="container">
-    <div class="insta-wrap reveal">
-      <div class="eyebrow" style="justify-content:center;">Acompanhe</div>
-      <h3>Bastidores, eventos e novos projetos.</h3>
-      <p>Acompanhe o Adrian no Instagram e veja de perto os trabalhos, eventos e experiências.</p>
-      <div class="insta-handle">@promotor.adrian</div>
-      <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener" class="btn btn-solid">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:2px;"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        Seguir no Instagram
+<!-- ============ INSTAGRAM ============ -->
+<section class="ig">
+  <div class="wrap ig-inner">
+    <div class="reveal">
+      <p class="eyebrow">Acompanhe o Adrian</p>
+      <h3 class="ig-handle">@promovedor.adrian</h3>
+      <p class="ig-text">Bastidores, eventos, ações e novos projetos.</p>
+      <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener" class="btn btn-outline">Seguir no Instagram</a>
+    </div>
+    <div class="ig-grid reveal">
+      <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener"><img src="img/13-acao-loja-robo-star.jpeg" alt="" loading="lazy"></a>
+      <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener"><img src="img/18-promover-fanta.jpeg" alt="" loading="lazy"></a>
+      <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener"><img src="img/02-adrian-retrato.jpeg" alt="" loading="lazy"></a>
+      <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener"><img src="img/21-distribuicao-yopro.jpeg" alt="" loading="lazy"></a>
+      <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener"><img src="img/10-acao-restaurante-TURATTI.jpeg" alt="" loading="lazy"></a>
+      <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener"><img src="img/12-corrida-construcao.jpeg" alt="" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="wrap cta-inner reveal">
+    <h2>TEM UM EVENTO?<br><span class="outline">VAMOS FAZER ACONTECER.</span></h2>
+    <p class="cta-text">Se você está organizando um evento, ação promocional, ativação de marca ou precisa de um profissional para atuar na produção e execução, entre em contato.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20em%20eventos." target="_blank" rel="noopener" class="btn btn-primary">Falar com Adrian</a>
+      <a href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20evento." target="_blank" rel="noopener" class="btn btn-outline">Solicitar orçamento</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contato">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <h2>VAMOS CONVERSAR SOBRE SEU EVENTO</h2>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-nome">Nome</label>
+            <input type="text" id="f-nome" name="nome" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="f-empresa">Empresa / Organização</label>
+            <input type="text" id="f-empresa" name="empresa" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-whats">WhatsApp</label>
+            <input type="tel" id="f-whats" name="whatsapp" required autocomplete="tel" placeholder="(85) 9 0000-0000">
+          </div>
+          <div class="form-group">
+            <label for="f-tipo">Tipo de serviço</label>
+            <select id="f-tipo" name="tipo" required>
+              <option value="">Selecione</option>
+              <option>Evento</option>
+              <option>Panfletagem</option>
+              <option>Recepção</option>
+              <option>Coordenação</option>
+              <option>Produção</option>
+              <option>Storymaker</option>
+              <option>Ação promocional</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-data">Data do evento</label>
+          <input type="date" id="f-data" name="data">
+        </div>
+        <div class="form-group">
+          <label for="f-msg">Mensagem</label>
+          <textarea id="f-msg" name="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar solicitação</button>
+      </form>
+    </div>
+
+    <div class="quick-contact reveal">
+      <h3>Contato rápido</h3>
+      <a class="quick-item" href="https://wa.me/5585989229918" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+        <div><div class="qi-label">WhatsApp</div><div class="qi-value">+55 85 98922-9918</div></div>
       </a>
-      <div class="insta-grid" id="instaGrid"></div>
+      <a class="quick-item" href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        <div><div class="qi-label">Instagram</div><div class="qi-value">@promovedor.adrian</div></div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ================= CTA GRANDE ================= -->
-<section class="section" id="cta">
-  <div class="container">
-    <div class="cta-big reveal">
-      <div class="cta-big-media"><img src="img/06-adrian-solar.jpeg" alt="Ambiente de evento profissional"></div>
-      <div class="cta-big-content">
-        <div class="eyebrow" style="justify-content:center;">Vamos conversar</div>
-        <h2>Tem um evento?<br>Vamos fazer acontecer.</h2>
-        <p>Se você está organizando um evento, ação promocional, ativação de marca ou precisa de um profissional para atuar na produção e execução, entre em contato.</p>
-        <div class="cta-actions">
-          <a href="#" class="btn btn-wpp" data-wpp="agendar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg>
-            Falar com Adrian
-          </a>
-          <a href="#contato" class="btn btn-solid" data-wpp="orcamento">Solicitar Orçamento</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- ================= CONTATO / FORM ================= -->
-<section class="section" id="contato">
-  <div class="container">
-    <div class="form-wrap">
-      <div class="form-side reveal">
-        <div class="eyebrow">Contato</div>
-        <h3>Fale com o Adrian</h3>
-        <p>Preencha o formulário ou fale direto pelo WhatsApp. A resposta costuma ser rápida.</p>
-
-        <div class="contact-line">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></div>
-          <div><div class="lbl">WhatsApp</div><a class="val" href="#" data-wpp="contato">+55 85 98922-9918</a></div>
-        </div>
-        <div class="contact-line">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
-          <div><div class="lbl">Instagram</div><a class="val" href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener">@promotor.adrian</a></div>
-        </div>
-        <div class="contact-line">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
-          <div><div class="lbl">E-mail</div><span class="val" id="emailContact">contato@promotoradrian.com.br</span></div>
-        </div>
-      </div>
-
-      <div class="reveal">
-        <form id="contactForm" novalidate>
-          <div class="field-grid">
-            <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" required placeholder="Seu nome completo"></div>
-            <div class="field"><label for="f-empresa">Empresa / Organização</label><input id="f-empresa" name="empresa" type="text" placeholder="Opcional"></div>
-          </div>
-          <div class="field-grid">
-            <div class="field"><label for="f-whatsapp">WhatsApp</label><input id="f-whatsapp" name="whatsapp" type="tel" required placeholder="(00) 00000-0000"></div>
-            <div class="field">
-              <label for="f-tipo">Tipo de Serviço</label>
-              <select id="f-tipo" name="tipo">
-                <option value="">Selecione</option>
-                <option>Evento</option>
-                <option>Panfletagem</option>
-                <option>Recepção</option>
-                <option>Coordenação</option>
-                <option>Produção</option>
-                <option>Storymaker</option>
-                <option>Ação promocional</option>
-                <option>Outro</option>
-              </select>
-            </div>
-          </div>
-          <div class="field-grid">
-            <div class="field"><label for="f-data">Data do Evento</label><input id="f-data" name="data" type="date"></div>
-            <div></div>
-          </div>
-          <div class="field">
-            <label for="f-msg">Mensagem</label>
-            <textarea id="f-msg" name="mensagem" required placeholder="Conte um pouco sobre o seu evento ou proposta de parceria..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-solid btn-block">Enviar Solicitação</button>
-          <div class="form-success" id="formSuccess">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-            <span>Solicitação enviada! O Adrian vai retornar em breve.</span>
-          </div>
-          <p class="form-alt">Prefere algo mais rápido? <a href="#" data-wpp="orcamento">Fale direto pelo WhatsApp</a></p>
-          <p class="form-note">Este formulário está pronto para ser conectado a um backend (e-mail, planilha ou CRM) futuramente.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="container">
-    <div class="footer-grid">
+  <div class="wrap">
+    <div class="footer-top">
       <div>
-        <div class="footer-brand"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--white);display:inline-block;"></span> PROMOTOR ADRIAN</div>
-        <div class="footer-tagline">Eventos • Produção • Promoção • Experiências</div>
-        <p>Promotor, produtor e profissional de eventos, atuando na criação, execução e divulgação de experiências.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" data-wpp="default" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></a>
-        </div>
+        <div class="footer-brand">PROMOTOR ADRIAN</div>
+        <p class="footer-tag">Eventos • Produção • Promoção • Experiências</p>
       </div>
       <div class="footer-col">
-        <h5>Navegação</h5>
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#experiencias">Experiências</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#videos">Vídeos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+        <h4>Links rápidos</h4>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#experiencias">Experiências</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#contato">Contato</a>
       </div>
       <div class="footer-col">
-        <h5>Contato</h5>
-        <ul>
-          <li><a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener">@promotor.adrian</a></li>
-          <li><a href="#" data-wpp="footer">+55 85 98922-9918</a></li>
-          <li><span style="color:var(--muted)">contato@promotoradrian.com.br</span></li>
-        </ul>
+        <h4>Redes</h4>
+        <a href="https://instagram.com/promovedor.adrian" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5585989229918" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Promotor Adrian. Todos os direitos reservados.</span>
-      <span>PROMOTOR ADRIAN · @promotor.adrian</span>
+      <p>© 2026 Promotor Adrian. Todos os direitos reservados.</p>
+      <p>Fortaleza, CE</p>
     </div>
   </div>
 </footer>
 
-<a href="#" id="fabWpp" class="fab-wpp" data-wpp="flutuante" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg>
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20em%20eventos." target="_blank" rel="noopener" aria-label="Falar com Adrian no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.72-4.12-4.87-4.31-.14-.19-1.17-1.55-1.17-2.96s.73-2.1 1-2.39c.26-.28.57-.35.76-.35h.55c.18 0 .41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.52-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.55.73 1.82.86.27.14.44.2.51.31.07.12.07.65-.17 1.33z"/></svg>
 </a>
 
 <script>
-/* ============================================================
-   CONFIGURAÇÃO
-   ============================================================ */
-const CONFIG = {
-  whatsappNumber: "5585989229918",
-  messages: {
-    default:   "Olá, Adrian! Vi seu site e gostaria de saber mais sobre seus serviços para eventos.",
-    contratar: "Olá, Adrian! Vi seu trabalho no site e quero contratar seus serviços para um evento.",
-    orcamento: "Olá, Adrian! Eu te vi no site e queria agendar um dia com você.",
-    agendar:   "Olá, Adrian! Vi seu site e gostaria de agendar uma conversa sobre um evento.",
-    contato:   "Olá, Adrian! Encontrei seu contato no site e gostaria de conversar sobre um evento.",
-    footer:    "Olá, Adrian! Vim pelo seu site e gostaria de falar sobre uma oportunidade.",
-    flutuante: "Olá, Adrian! Estou no seu site e gostaria de saber como podemos trabalhar juntos.",
-    parceria:  "Olá, Adrian! Tenho interesse em conversar sobre uma parceria."
-  },
-  instagramUrl: "https://www.instagram.com/promotor.adrian",
-  email: "contato@promotoradrian.com.br"
-};
-function waLink(kind){
-  const msg = encodeURIComponent(CONFIG.messages[kind] || CONFIG.messages.default);
-  return `https://wa.me/${CONFIG.whatsappNumber}?text=${msg}`;
-}
-document.querySelectorAll('[data-wpp]').forEach(el=>{
-  el.href = waLink(el.dataset.wpp);
-  el.target = '_blank'; el.rel = 'noopener';
-});
-const emailEl = document.getElementById('emailContact');
-if(emailEl) emailEl.textContent = CONFIG.email;
+(function(){
+  "use strict";
 
-/* ============================================================
-   SERVIÇOS
-   ============================================================ */
-const SERVICES = [
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>', title:"Eventos", desc:"Participação e atuação em eventos de diferentes formatos." },
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M7 14v5a2 2 0 0 0 2 2h1v-6"/></svg>', title:"Panfletagem", desc:"Ações de divulgação e contato direto com o público." },
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>', title:"Recepção", desc:"Atendimento e acolhimento do público em eventos e ativações." },
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9.5 8.5l5 5"/></svg>', title:"Coordenação", desc:"Organização, acompanhamento e suporte na execução." },
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 6V4h8v2"/><circle cx="12" cy="12.5" r="3"/></svg>', title:"Produção", desc:"Atuação nos bastidores e suporte à realização do evento." },
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="3.4"/><circle cx="17.4" cy="6.6" r="1"/></svg>', title:"Storymaker", desc:"Criação de conteúdos e registros para redes sociais durante os eventos." },
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 6.8L21 11l-6.6 2.2L12 20l-2.4-6.8L3 11l6.6-2.2z"/></svg>', title:"Ações Promocionais", desc:"Ativações e experiências voltadas para marcas e público." },
-  { icon:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>', title:"E Muito Mais", desc:"Área aberta para novas oportunidades, projetos e formatos de trabalho." }
-];
-document.getElementById('servicesGrid').innerHTML = SERVICES.map((s,i)=>`
-  <div class="service-card reveal">
-    <span class="idx">${String(i+1).padStart(2,'0')}</span>
-    <div class="ic">${s.icon}</div>
-    <h4>${s.title}</h4>
-    <div class="desc">${s.desc}</div>
-  </div>`).join('');
-
-/* ============================================================
-   EXPERIÊNCIAS — estrutura pronta para novos cadastros
-   Cada item: { nome, atuacao, capa, fotos[], video(opcional), descricao, wide(opcional) }
-   ============================================================ */
-const EXPERIENCES = [
-  { nome:"Ação Tijuca Alimentos", atuacao:"Ativação de marca / Corrida de rua",
-    capa:"img/04-evento-uniforme-azul.jpeg", fotos:["img/04-evento-uniforme-azul.jpeg","img/22-adrian-corrida.jpeg"],
-    video:"img/24-video-tijuca-alimentos.mp4",
-    descricao:"Atuação na ativação da Tijuca Alimentos durante uma corrida de rua, com uniforme da marca e interação com os participantes." },
-  { nome:"Casamento", atuacao:"Presença em evento Particular",
-    capa:"img/25-adrian-corrida-2.jpeg", fotos:["img/25-adrian-corrida-2.jpeg"],
-    descricao:"Registro da presença de Adrian no casamento da leticia e levi, evento privado com apoio na montagem.", wide:true },
-  { nome:"Normatel & Verdes Mares", atuacao:"Ativação esportiva / Futebol",
-    capa:"img/17-adrian-yopro.jpeg", fotos:["img/17-adrian-yopro.jpeg"],
-    descricao:"Ativação promocional da Normatel em parceria com Verdes Mares, com dinâmica de futebol e interação com o público." },
-  { nome:"UNINASSAU", atuacao:"Feira institucional / Mascote",
-    capa:"img/23-adrian-yopro-2.jpeg", fotos:["img/23-adrian-yopro-2.jpeg"],
-    descricao:"Ação institucional da UNINASSAU com personagem temático e atendimento ao público no espaço da marca." },
-  { nome:"Turatti - Gastrobar & Parrilla", atuacao:"Ação promocional em restaurante",
-    capa:"img/10-acao-promocional.jpeg", fotos:["img/10-acao-promocional.jpeg"],
-    descricao:"Ação promocional realizada em frente ao Turatti - Gastrobar & Parrilla, restaurante localizado em Fortaleza." },
-  { nome:"Ativação Fanta", atuacao:"Ativação de marca / Experiência de produto",
-    capa:"img/11-acao-rua.jpeg", fotos:["img/11-acao-rua.jpeg","img/12-produto-fanta.jpeg","img/14-adrian-fanta.jpeg"],
-    descricao:"Atuação em espaço de experiência da Fanta, com apresentação de produtos e interação com o público." },
-  { nome:"Ativação Night Power", atuacao:"Degustação / Promoção de produto",
-    capa:"img/16-ativacao-produto.jpeg", fotos:["img/16-ativacao-produto.jpeg","img/20-evento-publico.jpeg","img/34-night-power-evento.png"],
-    descricao:"Ação promocional da Night Power com apresentação do produto, degustação e presença em eventos." },
-  { nome:"Ativações de varejo e personagens", atuacao:"Ações promocionais / Mascotes",
-    capa:"img/01-mascote-ativacao.jpeg", fotos:["img/01-mascote-ativacao.jpeg","img/08-mascote-supermercado.jpeg","img/09-mascote-azul.jpeg","img/18-mascote-cadeira.jpeg","img/19-mascote-supermercado-2.jpeg","img/31-mascote-exito.png"],
-    video:"img/25-video-montage-eventos.mp4",
-    descricao:"Ativações em lojas e supermercados com personagens, ambientação promocional e interação direta com o público.", wide:true },
-  { nome:"Marcas e experiências promocionais", atuacao:"Ações de marca / Eventos",
-    capa:"img/34-night-power-evento.png", fotos:["img/34-night-power-evento.png","img/06-adrian-solar.jpeg","img/07-adrian-acao-loja.jpeg","img/13-acao-loja-vermelha.jpeg","img/21-adrian-evento.jpeg","img/24-adrian-evento-2.jpeg","img/26-adrian-yopro-3.jpeg","img/27-registro-evento.jpeg","img/28-evento-publico.png","img/29-acao-alares.png","img/30-acao-nestonutri.png","img/32-evento-sustentavel.png","img/33-acao-shein.png"],
-    descricao:"Registros de ações promocionais para Night Power, Alares, Nestonutri, SHEIN e eventos institucionais." }
-];
-
-const expGrid = document.getElementById('expGrid');
-expGrid.innerHTML = EXPERIENCES.map((e,i)=>`
-  <div class="exp-card ${e.wide?'wide':''}" data-idx="${i}">
-    <div class="exp-thumb"><img src="${e.capa}" alt="${e.nome} — ${e.atuacao}" loading="lazy"></div>
-    <span class="exp-tag tag-pill"><span class="chip-dot"></span>${i+1 < 10 ? '0'+(i+1) : (i+1)}</span>
-    <div class="exp-body">
-      <div class="role">${e.atuacao}</div>
-      <h4>${e.nome}</h4>
-      <span class="exp-btn">Ver Experiência →</span>
-    </div>
-  </div>`).join('');
-
-const expModal = document.getElementById('expModal');
-function openExpModal(i){
-  const e = EXPERIENCES[i];
-  document.getElementById('modalHeroImg').src = e.capa;
-  document.getElementById('modalHeroImg').alt = e.nome;
-  document.getElementById('modalRole').textContent = e.atuacao;
-  document.getElementById('modalTitle').textContent = e.nome;
-  document.getElementById('modalDesc').textContent = e.descricao;
-  document.getElementById('modalGallery').innerHTML = e.fotos.map(f=>`<img src="${f}" alt="${e.nome}" loading="lazy">`).join('');
-  const vw = document.getElementById('modalVideoWrap');
-  const v = document.getElementById('modalVideo');
-  if(e.video){ vw.style.display='block'; v.src = e.video; } else { vw.style.display='none'; v.removeAttribute('src'); }
-  expModal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeExpModal(){
-  expModal.classList.remove('open');
-  document.body.style.overflow = '';
-  const v = document.getElementById('modalVideo'); v.pause();
-}
-expGrid.addEventListener('click', e=>{
-  const card = e.target.closest('.exp-card');
-  if(card) openExpModal(Number(card.dataset.idx));
-});
-document.getElementById('modalClose').addEventListener('click', closeExpModal);
-expModal.addEventListener('click', e=>{ if(e.target === expModal) closeExpModal(); });
-
-/* ============================================================
-   GALERIA — apenas fotos de eventos e trabalhos, grid editorial
-   ============================================================ */
-const GALLERY = [
-  { src:"img/02-adrian-retrato.jpeg", cap:"Retrato profissional", span:"gs-a" },
-  { src:"img/03-adrian-colagem-eventos.jpeg", cap:"Apresentação profissional", span:"gs-d" },
-  { src:"img/05-adrian-espelho.jpeg", cap:"Bastidores de preparação", span:"gs-b" },
-  { src:"img/15-adrian-retrato-banqueta.jpeg", cap:"Retrato de apresentação", span:"gs-c" }
-];
-const galGrid = document.getElementById('galGrid');
-galGrid.innerHTML = GALLERY.map((g,i)=>`
-  <div class="gal-item ${g.span}" data-idx="${i}">
-    <img src="${g.src}" alt="${g.cap}" loading="lazy">
-    <div class="zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-    <div class="overlay"><span class="cap">${g.cap}</span></div>
-  </div>`).join('');
-
-document.getElementById('instaGrid').innerHTML = GALLERY.slice(0,6).map(g=>`<div class="insta-tile"><img src="${g.src}" alt="${g.cap}" loading="lazy"></div>`).join('');
-
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-let lbIndex = 0;
-function openLightbox(i){ lbIndex=i; lbImg.src=GALLERY[i].src; lbImg.alt=GALLERY[i].cap; lightbox.classList.add('open'); document.body.style.overflow='hidden'; }
-function closeLightbox(){ lightbox.classList.remove('open'); document.body.style.overflow=''; }
-function stepLightbox(d){ lbIndex=(lbIndex+d+GALLERY.length)%GALLERY.length; lbImg.src=GALLERY[lbIndex].src; lbImg.alt=GALLERY[lbIndex].cap; }
-galGrid.addEventListener('click', e=>{ const item=e.target.closest('.gal-item'); if(item) openLightbox(Number(item.dataset.idx)); });
-document.getElementById('lbClose').addEventListener('click', closeLightbox);
-document.getElementById('lbPrev').addEventListener('click', ()=>stepLightbox(-1));
-document.getElementById('lbNext').addEventListener('click', ()=>stepLightbox(1));
-lightbox.addEventListener('click', e=>{ if(e.target===lightbox) closeLightbox(); });
-
-/* ============================================================
-   VÍDEOS
-   ============================================================ */
-const VIDEOS = [
-  { titulo:"Ativação Tijuca Alimentos", evento:"Corrida de rua", desc:"Presença e interação com o público durante evento esportivo.", thumb:"img/22-adrian-corrida.jpeg", src:"img/24-video-tijuca-alimentos.mp4" },
-  { titulo:"Ação de Rua — Montage Eventos", evento:"Personagens temáticos", desc:"Ativação com personagens e interação direta com o público.", thumb:"img/01-mascote-ativacao.jpeg", src:"img/25-video-montage-eventos.mp4" }
-];
-const videoGrid = document.getElementById('videoGrid');
-function renderVideos(){
-  if(!VIDEOS.length){
-    videoGrid.innerHTML = `<div class="video-empty">Estrutura pronta para receber vídeos. Novos registros em vídeo serão adicionados em breve.</div>`;
-    return;
+  /* ---------- Header scroll state ---------- */
+  var header = document.getElementById('siteHeader');
+  function onScroll(){
+    if(window.scrollY > 40){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
   }
-  videoGrid.innerHTML = VIDEOS.map((v,i)=>`
-    <div class="video-card" data-idx="${i}">
-      <div class="video-thumb">
-        <img src="${v.thumb}" alt="${v.titulo}" loading="lazy">
-        <div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
-      </div>
-      <div class="video-body">
-        <div class="role">${v.evento}</div>
-        <h4>${v.titulo}</h4>
-        <p>${v.desc}</p>
-      </div>
-    </div>`).join('');
-}
-renderVideos();
-const videoModal = document.getElementById('videoModal');
-const vmVideo = document.getElementById('vmVideo');
-videoGrid.addEventListener('click', e=>{
-  const card = e.target.closest('.video-card');
-  if(!card) return;
-  const v = VIDEOS[Number(card.dataset.idx)];
-  vmVideo.src = v.src;
-  videoModal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  vmVideo.play().catch(()=>{});
-});
-function closeVideoModal(){ videoModal.classList.remove('open'); document.body.style.overflow=''; vmVideo.pause(); vmVideo.removeAttribute('src'); vmVideo.load(); }
-document.getElementById('vmClose').addEventListener('click', closeVideoModal);
-videoModal.addEventListener('click', e=>{ if(e.target===videoModal) closeVideoModal(); });
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 
-/* Global ESC handling for all overlays */
-document.addEventListener('keydown', e=>{
-  if(e.key === 'Escape'){
-    if(lightbox.classList.contains('open')) closeLightbox();
-    if(expModal.classList.contains('open')) closeExpModal();
-    if(videoModal.classList.contains('open')) closeVideoModal();
+  /* ---------- Mobile nav ---------- */
+  var hamburger = document.getElementById('hamburgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  function closeMobile(){
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
   }
-  if(lightbox.classList.contains('open')){
-    if(e.key === 'ArrowLeft') stepLightbox(-1);
-    if(e.key === 'ArrowRight') stepLightbox(1);
+  hamburger.addEventListener('click', function(){
+    var isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true':'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMobile);
+  });
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
   }
-});
 
-/* Header scroll state */
-const header = document.getElementById('site-header');
-window.addEventListener('scroll', ()=>{ header.classList.toggle('scrolled', window.scrollY > 40); }, { passive:true });
+  /* ---------- Lightbox ---------- */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCounter = document.getElementById('lbCounter');
+  var lbClose = document.getElementById('lbClose');
+  var lbPrev = document.getElementById('lbPrev');
+  var lbNext = document.getElementById('lbNext');
 
-/* Mobile drawer */
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const drawer = document.getElementById('mobileDrawer');
-hamburgerBtn.addEventListener('click', ()=>{
-  const open = drawer.classList.toggle('open');
-  hamburgerBtn.classList.toggle('open', open);
-  hamburgerBtn.setAttribute('aria-expanded', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-});
-drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
-  drawer.classList.remove('open'); hamburgerBtn.classList.remove('open'); document.body.style.overflow = '';
-}));
+  var galleryItems = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+  var currentIndex = 0;
+  var lastFocused = null;
 
-/* Reveal on scroll */
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-}, { threshold:.12 });
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-/* Re-observe dynamically injected reveal cards (services) */
-document.querySelectorAll('#servicesGrid .reveal').forEach(el=>io.observe(el));
+  function getSrc(el){
+    if(el.tagName === 'A'){ return el.getAttribute('href'); }
+    var img = el.querySelector('img');
+    return img ? img.getAttribute('src') : '';
+  }
+  function getAlt(el){
+    var img = el.querySelector('img');
+    return img ? img.getAttribute('alt') : '';
+  }
 
-/* Contact form */
-const form = document.getElementById('contactForm');
-const success = document.getElementById('formSuccess');
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-  if(!form.checkValidity()){ form.reportValidity(); return; }
-  // TODO: conectar a um backend real (ex: fetch('/api/contato', {method:'POST', body: new FormData(form)}))
-  success.classList.add('show');
-  form.reset();
-  setTimeout(()=>success.classList.remove('show'), 6000);
-});
+  function openLightbox(index){
+    currentIndex = index;
+    var el = galleryItems[currentIndex];
+    lbImg.src = getSrc(el);
+    lbImg.alt = getAlt(el) || '';
+    lbCounter.textContent = (currentIndex+1) + ' / ' + galleryItems.length;
+    lastFocused = document.activeElement;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    if(lastFocused){ lastFocused.focus(); }
+  }
+  function showNext(){ currentIndex = (currentIndex+1) % galleryItems.length; openLightbox(currentIndex); }
+  function showPrev(){ currentIndex = (currentIndex-1+galleryItems.length) % galleryItems.length; openLightbox(currentIndex); }
 
-document.getElementById('year').textContent = new Date().getFullYear();
+  galleryItems.forEach(function(el, i){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openLightbox(i);
+    });
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  lbNext.addEventListener('click', showNext);
+  lbPrev.addEventListener('click', showPrev);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox){ closeLightbox(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Escape'){ closeLightbox(); }
+    if(e.key === 'ArrowRight'){ showNext(); }
+    if(e.key === 'ArrowLeft'){ showPrev(); }
+  });
+
+  /* ---------- Video modal ---------- */
+  var videoModal = document.getElementById('videoModal');
+  var vmVideo = document.getElementById('vmVideo');
+  var vmClose = document.getElementById('vmClose');
+  var videoCards = document.querySelectorAll('.video-card[data-video]');
+
+  function openVideo(src){
+    vmVideo.src = src;
+    videoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    vmVideo.play().catch(function(){});
+    vmClose.focus();
+  }
+  function closeVideo(){
+    vmVideo.pause();
+    vmVideo.removeAttribute('src');
+    vmVideo.load();
+    videoModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  videoCards.forEach(function(card){
+    card.addEventListener('click', function(){ openVideo(card.getAttribute('data-video')); });
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openVideo(card.getAttribute('data-video')); }
+    });
+  });
+  vmClose.addEventListener('click', closeVideo);
+  videoModal.addEventListener('click', function(e){ if(e.target === videoModal){ closeVideo(); } });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && videoModal.classList.contains('open')){ closeVideo(); }
+  });
+
+  /* ---------- Contact form -> WhatsApp ---------- */
+  var form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    var nome = form.nome.value.trim();
+    var empresa = form.empresa.value.trim();
+    var whats = form.whatsapp.value.trim();
+    var tipo = form.tipo.value;
+    var data = form.data.value;
+    var msg = form.mensagem.value.trim();
+
+    var lines = [
+      'Olá, Adrian! Gostaria de solicitar informações sobre um evento.',
+      'Nome: ' + nome,
+      empresa ? ('Empresa: ' + empresa) : null,
+      'WhatsApp: ' + whats,
+      'Tipo de serviço: ' + tipo,
+      data ? ('Data do evento: ' + data) : null,
+      'Mensagem: ' + msg
+    ].filter(Boolean);
+
+    var text = encodeURIComponent(lines.join('\n'));
+    window.open('https://wa.me/5585989229918?text=' + text, '_blank', 'noopener');
+  });
+
+})();
 </script>
 </body>
 </html>
