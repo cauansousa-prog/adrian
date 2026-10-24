@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Veja as experiências, registros e vídeos do Promotor Adrian.">
+  <meta name="robots" content="index, follow">
+  <title>Portfólio | Promotor Adrian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <main class="portfolio-shell">
+    <a class="portfolio-back" href="/">← Voltar ao site</a>
+    <header class="portfolio-header">
+      <span class="portfolio-eyebrow" id="portfolioAllEyebrow">Portfólio</span>
+      <h1 id="portfolioAllTitle">Experiências que fizeram parte da trajetória</h1>
+      <p>Momentos de eventos, ações, ativações e produção com Adrian.</p>
+    </header>
+    <nav class="portfolio-topics" aria-label="Tópicos do portfólio">
+      <a href="/portfolio.html?topic=experiencias" data-topic-link="experiencias">Experiências</a>
+      <a href="/portfolio.html?topic=galeria" data-topic-link="galeria">Galeria</a>
+      <a href="/portfolio.html?topic=videos" data-topic-link="videos">Vídeos</a>
+    </nav>
+    <div class="portfolio-grid" id="portfolioAllGrid" aria-label="Mídias do tópico"></div>
+    <p class="portfolio-status" data-portfolio-status role="status" aria-live="polite">Carregando mídias…</p>
+  </main>
+
+  <dialog class="media-viewer" id="mediaViewer" aria-labelledby="mediaViewerTitle">
+    <button class="media-viewer-close" id="mediaViewerClose" type="button" aria-label="Fechar visualização">×</button>
+    <div class="media-viewer-content" id="mediaViewerContent"></div>
+    <div class="media-viewer-caption">
+      <h2 id="mediaViewerTitle"></h2>
+      <p id="mediaViewerDescription" hidden></p>
+    </div>
+  </dialog>
+  <script type="module" src="portfolio.js"></script>
+</body>
+</html>
