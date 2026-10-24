@@ -93,6 +93,11 @@ function makeCard(item, topic, className = '') {
 function renderCards(container, items, topic, className = '') {
   const fragment = document.createDocumentFragment();
   items.forEach((item) => fragment.append(makeCard(item, topic, className)));
+  // The home page's reveal observer runs before Supabase adds these cards.
+  // Mark dynamically inserted cards as revealed so they do not remain at opacity: 0.
+  if (container.classList.contains('reveal-stagger')) {
+    [...fragment.children].forEach((card) => card.classList.add('is-visible'));
+  }
   container.replaceChildren(fragment);
 }
 
@@ -161,3 +166,4 @@ viewer?.addEventListener('close', () => {
 });
 
 loadPortfolio();
+
