@@ -62,7 +62,6 @@ function renderCalendar() {
     button.type = 'button';
     button.className = 'calendar-day';
     button.textContent = String(day.getDate());
-    button.setAttribute('role', 'gridcell');
     button.setAttribute('aria-label', `${dateFormatter.format(day)}: ${status}`);
     button.disabled = currentState !== 'loaded';
 
