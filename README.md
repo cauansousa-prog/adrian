@@ -30,9 +30,16 @@ Não use `service_role` nem chaves secretas. Copie `.env.example` para `.env.loc
 
 O projeto Vercel deve apontar para este repositório e executar `node scripts/build.mjs`, publicando `dist/` (já indicado em `vercel.json`). O painel fica em `https://SEU-DOMINIO/admin.html`. Defina o domínio como Site URL/URL de redirecionamento permitido no Supabase Auth se a configuração de Auth do projeto solicitar esses endereços.
 
+## Portfólio e mídias
+
+`supabase/migrations/20261024221000_portfolio_media.sql` cria e popula a tabela `portfolio_media` com as imagens e os vídeos já usados no site. A migração cria o bucket público `portfolio-media` para os novos arquivos; o acesso público é somente para leitura, e as políticas RLS de upload, alteração e remoção consultam `availability_admins`.
+
+No painel `/admin.html`, a área **Imagens e vídeos do portfólio** permite adicionar arquivos a Experiências, Galeria e Vídeos, editar título/descrição e remover registros. Experiências e Galeria recebem imagens; Vídeos aceita imagens, MP4 e WebM. O limite é 50 MB por arquivo. O público vê prévias na página inicial e usa **Ver mais** para abrir todas as mídias do tópico. A descrição aparece no visualizador quando a mídia é aberta.
+
+A idade e altura exibidas na seção Sobre são configuradas diretamente no HTML da página inicial. Atualize esses dados no código quando forem alterados.
+
 ## Desenvolvimento
 
 Copie `.env.example` para `.env.local`, substitua os valores de exemplo pelas credenciais públicas do projeto e execute `node scripts/build.mjs`. Sirva o conteúdo de `dist/` por um servidor HTTP local para testar; abrir `index.html` diretamente como arquivo não fornece o módulo de configuração gerado.
 
 A agenda consulta o banco sempre que o mês muda, quando a página volta ao foco e a cada minuto. Durante carregamento ou falha, os dias ficam em estado desconhecido e não são apresentados como livres.
-
