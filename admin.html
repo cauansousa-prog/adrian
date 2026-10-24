@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Agenda administrativa | Promotor Adrian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <a class="back-link" href="/">← Voltar ao site</a>
+    <header class="admin-heading">
+      <span class="eyebrow">Promotor Adrian</span>
+      <h1>Gestão da <span>agenda</span></h1>
+      <p>Acesse com a conta autorizada para bloquear ou liberar datas de eventos.</p>
+    </header>
+
+    <section class="admin-card" id="loginPanel" aria-labelledby="loginTitle">
+      <h2 id="loginTitle">Acesso administrativo</h2>
+      <form id="loginForm">
+        <label for="adminEmail">E-mail</label>
+        <input id="adminEmail" name="email" type="email" autocomplete="username" required>
+        <label for="adminPassword">Senha</label>
+        <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+        <button class="button button-primary" type="submit">Entrar</button>
+      </form>
+      <p class="notice" id="loginStatus" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="admin-card" id="managementPanel" aria-labelledby="managementTitle" hidden>
+      <div class="panel-heading">
+        <div>
+          <h2 id="managementTitle">Bloqueios de datas</h2>
+          <p>As datas e intervalos ficam ocultos para visitantes.</p>
+        </div>
+        <button class="button button-secondary" id="signOutButton" type="button">Sair</button>
+      </div>
+
+      <form id="blockForm" class="block-form">
+        <input id="blockId" name="id" type="hidden">
+        <div class="date-fields">
+          <div>
+            <label for="startDate">Data inicial</label>
+            <input id="startDate" name="start_date" type="date" required>
+          </div>
+          <div>
+            <label for="endDate">Data final</label>
+            <input id="endDate" name="end_date" type="date" required>
+          </div>
+        </div>
+        <p class="form-hint">Para um único dia, repita a mesma data nos dois campos.</p>
+        <div class="form-actions">
+          <button class="button button-primary" id="saveBlockButton" type="submit">Bloquear período</button>
+          <button class="button button-secondary" id="cancelEditButton" type="button" hidden>Cancelar edição</button>
+        </div>
+      </form>
+      <p class="notice" id="adminStatus" role="status" aria-live="polite"></p>
+
+      <div class="block-list-heading">
+        <h3>Datas bloqueadas</h3>
+        <button class="text-button" id="refreshBlocksButton" type="button">Atualizar lista</button>
+      </div>
+      <p class="notice" id="listStatus" role="status" aria-live="polite"></p>
+      <ul class="block-list" id="blockList"></ul>
+    </section>
+    <p class="admin-footnote">A agenda pública mostra apenas as datas ocupadas, sem detalhes dos eventos.</p>
+  </main>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
+
+
