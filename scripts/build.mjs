@@ -45,7 +45,7 @@ if (path.resolve(output) !== expectedOutput || output === root) {
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-for (const file of ['index.html', 'admin.html', 'recuperar-senha.html', 'redefinir-senha.html', 'agenda-client.js', 'agenda.js', 'admin.js', 'admin.css', 'password-recovery.js', 'password-update.js']) {
+for (const file of ['index.html', 'admin.html', 'recuperar-senha.html', 'redefinir-senha.html', 'portfolio.html', 'agenda-client.js', 'agenda.js', 'admin.js', 'admin.css', 'password-recovery.js', 'password-update.js', 'portfolio.js', 'portfolio.css', 'portfolio-admin.js']) {
   await cp(path.join(root, file), path.join(output, file));
 }
 await cp(path.join(root, 'img'), path.join(output, 'img'), { recursive: true });
@@ -55,5 +55,4 @@ await writeFile(
   'utf8',
 );
 console.log('Site estático preparado em dist/.');
-
 

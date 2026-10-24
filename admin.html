@@ -68,11 +68,57 @@
       </div>
       <p class="notice" id="listStatus" role="status" aria-live="polite"></p>
       <ul class="block-list" id="blockList"></ul>
+
+      <section class="media-management" aria-labelledby="mediaManagementTitle">
+        <div class="block-list-heading">
+          <h3 id="mediaManagementTitle">Imagens e vídeos do portfólio</h3>
+          <button class="text-button" id="refreshMediaButton" type="button">Atualizar mídias</button>
+        </div>
+        <p class="form-hint">Gerencie o que aparece em Experiências, Galeria e Vídeos. A descrição só é mostrada quando a pessoa abre a mídia.</p>
+        <form id="portfolioMediaForm" class="media-form">
+          <input id="portfolioMediaId" name="id" type="hidden">
+          <div class="date-fields">
+            <div>
+              <label for="portfolioTopic">Tópico</label>
+              <select id="portfolioTopic" name="topic" required>
+                <option value="experiencias">Experiências</option>
+                <option value="galeria">Galeria</option>
+                <option value="videos">Vídeos</option>
+              </select>
+            </div>
+            <div>
+              <label for="portfolioTitle">Título</label>
+              <input id="portfolioTitle" name="title" type="text" maxlength="120" required>
+            </div>
+          </div>
+          <label for="portfolioDescription">Descrição (opcional)</label>
+          <textarea id="portfolioDescription" name="description" rows="3" maxlength="1200" placeholder="Conte um pouco sobre este registro. Ela aparece quando a pessoa abre a mídia."></textarea>
+          <div id="portfolioFileField">
+            <label for="portfolioFile">Arquivo</label>
+            <input id="portfolioFile" name="file" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif,video/mp4,video/webm" required>
+            <p class="form-hint">Experiências e Galeria aceitam imagens. Vídeos aceita imagens e vídeos MP4/WebM. Limite: 50 MB.</p>
+          </div>
+          <div class="form-actions">
+            <button class="button button-primary" id="savePortfolioMediaButton" type="submit">Adicionar mídia</button>
+            <button class="button button-secondary" id="cancelPortfolioEditButton" type="button" hidden>Cancelar edição</button>
+          </div>
+        </form>
+        <p class="notice" id="portfolioMediaStatus" role="status" aria-live="polite"></p>
+        <label class="media-filter-label" for="portfolioTopicFilter">Tópico da lista</label>
+        <select id="portfolioTopicFilter">
+          <option value="all">Todos os tópicos</option>
+          <option value="experiencias">Experiências</option>
+          <option value="galeria">Galeria</option>
+          <option value="videos">Vídeos</option>
+        </select>
+        <p class="notice" id="portfolioMediaListStatus" role="status" aria-live="polite"></p>
+        <ul class="media-list" id="portfolioMediaList"></ul>
+      </section>
     </section>
     <p class="admin-footnote">A agenda pública mostra apenas as datas ocupadas, sem detalhes dos eventos.</p>
   </main>
   <script type="module" src="admin.js"></script>
+  <script type="module" src="portfolio-admin.js"></script>
 </body>
 </html>
-
 

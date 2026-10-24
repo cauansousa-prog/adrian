@@ -34,12 +34,14 @@ function translateError(error) {
 function showSignedOut(message) {
   loginPanel.hidden = false;
   managementPanel.hidden = true;
+  window.dispatchEvent(new CustomEvent('portfolio-admin-signed-out'));
   if (message) setMessage(loginStatus, message, 'error');
 }
 
 function showSignedIn() {
   loginPanel.hidden = true;
   managementPanel.hidden = false;
+  window.dispatchEvent(new CustomEvent('portfolio-admin-ready'));
   setMessage(loginStatus, '', '');
 }
 
@@ -227,5 +229,4 @@ signOutButton.addEventListener('click', async () => {
 });
 
 document.getElementById('refreshBlocksButton').addEventListener('click', loadBlocks);
-
 
