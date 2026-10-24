@@ -20,6 +20,8 @@ a{color:inherit;text-decoration:none;}
 .portfolio-card::after{position:absolute;inset:35% 0 0;content:"";background:linear-gradient(transparent,rgba(0,0,0,.82));pointer-events:none;}
 .portfolio-card-title{position:absolute;z-index:1;left:16px;right:16px;bottom:14px;font:700 14px/1.25 var(--font-display);text-transform:uppercase;}
 .portfolio-preview-grid .portfolio-card{display:inline-block;break-inside:avoid;aspect-ratio:auto;min-height:180px;margin:0 0 16px;}
+#galleryMasonry.portfolio-preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;columns:initial;column-gap:normal;}
+#galleryMasonry.portfolio-preview-grid .portfolio-card{display:block;break-inside:auto;aspect-ratio:4/3;min-height:0;margin:0;width:100%;}
 .exp-grid .portfolio-card{min-height:270px;}
 .video-grid .portfolio-card{aspect-ratio:16/9;}
 .portfolio-section-status{min-height:20px;margin:14px 0 0;color:var(--muted);font-size:12px;}
@@ -43,5 +45,6 @@ a{color:inherit;text-decoration:none;}
 .media-viewer-caption p{margin:0;color:var(--muted);font-size:14px;white-space:pre-wrap;}
 .media-viewer-caption p[hidden]{display:none;}
 button:focus-visible,a:focus-visible{outline:2px solid var(--white);outline-offset:3px;}
-@media(max-width:800px){.portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.portfolio-header{margin-top:56px;}}
-@media(max-width:540px){.portfolio-shell{width:min(100% - 28px,1240px);padding-top:26px;}.portfolio-header{margin:46px 0 28px;}.portfolio-grid{gap:10px;}.portfolio-card-title{left:10px;right:10px;bottom:10px;font-size:11px;}.media-viewer{padding:16px;}}
+@media(max-width:800px){.portfolio-grid,#galleryMasonry.portfolio-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.portfolio-header{margin-top:56px;}}
+@media(max-width:540px){.portfolio-shell{width:min(100% - 28px,1240px);padding-top:26px;}.portfolio-header{margin:46px 0 28px;}.portfolio-grid,#galleryMasonry.portfolio-preview-grid{gap:10px;}.portfolio-card-title{left:10px;right:10px;bottom:10px;font-size:11px;}.media-viewer{padding:16px;}}
+
