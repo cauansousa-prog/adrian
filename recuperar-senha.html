@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Recuperar senha | Promotor Adrian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <a class="back-link" href="/admin.html">← Voltar ao acesso administrativo</a>
+    <header class="admin-heading">
+      <span class="eyebrow">Promotor Adrian</span>
+      <h1>Recuperar <span>senha</span></h1>
+      <p>Enviaremos um link seguro para o e-mail da conta autorizada.</p>
+    </header>
+    <section class="admin-card recovery-card" aria-labelledby="recoveryTitle">
+      <h2 id="recoveryTitle">Solicitar redefinição</h2>
+      <form id="recoveryForm">
+        <label for="recoveryEmail">E-mail da conta</label>
+        <input id="recoveryEmail" name="email" type="email" autocomplete="username" required>
+        <button class="button button-primary" type="submit">Enviar link</button>
+      </form>
+      <p class="notice" id="recoveryStatus" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script type="module" src="password-recovery.js"></script>
+</body>
+</html>
+
