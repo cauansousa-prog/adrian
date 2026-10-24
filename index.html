@@ -471,6 +471,46 @@ nav.main-nav a:hover::after{width:100%;}
 .ig-grid a:hover img{transform:scale(1.05);}
 @media(max-width:900px){.ig{padding:90px 0;} .ig-inner{grid-template-columns:1fr;gap:36px;}}
 
+/* ============ AVAILABILITY CALENDAR ============ */
+.availability{padding:130px 0;background:var(--black-deep);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+.availability-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px;}
+.availability-head .section-sub{max-width:560px;}
+.calendar-panel{max-width:900px;margin:0 auto;padding:30px;background:var(--black-2);border:1px solid var(--border-soft);}
+.calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;}
+.calendar-toolbar h3{font-size:clamp(18px,3vw,24px);letter-spacing:.04em;text-transform:capitalize;text-align:center;}
+.calendar-nav{width:46px;height:46px;flex:0 0 46px;border:1px solid var(--border);background:transparent;color:var(--white);font-size:23px;line-height:1;}
+.calendar-nav:hover:not(:disabled){background:var(--white);color:var(--black-deep);}
+.calendar-nav:disabled{opacity:.45;cursor:wait;}
+.calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));}
+.calendar-weekdays{margin-bottom:8px;}
+.calendar-weekdays span{text-align:center;color:var(--gray);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 2px;}
+.calendar-day{position:relative;min-height:66px;border:1px solid var(--border-soft);background:rgba(255,255,255,.015);color:var(--gray-light);font-size:14px;display:flex;align-items:center;justify-content:center;}
+.calendar-day:not(:disabled):hover{border-color:rgba(255,255,255,.42);}
+.calendar-day.outside-month{opacity:.32;}
+.calendar-day.is-free{background:rgba(62,151,102,.13);color:#b8edcb;}
+.calendar-day.is-busy{background:rgba(181,132,58,.2);color:#f0d39d;}
+.calendar-day.is-today{box-shadow:inset 0 0 0 2px var(--white);font-weight:800;}
+.calendar-day.is-unknown{color:#777;background:rgba(255,255,255,.02);}
+.calendar-legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px;color:var(--gray-light);font-size:12px;}
+.calendar-legend span{display:inline-flex;align-items:center;gap:8px;}
+.calendar-swatch{width:12px;height:12px;border:1px solid var(--border);display:inline-block;}
+.calendar-swatch.free{background:rgba(62,151,102,.55);}
+.calendar-swatch.busy{background:rgba(181,132,58,.7);}
+.calendar-swatch.today{box-shadow:inset 0 0 0 1px var(--white);}
+.calendar-status{min-height:24px;margin-top:18px;color:var(--gray-light);font-size:13px;}
+.calendar-status[data-state="error"]{color:#f0b7a8;}
+.availability-cta{margin-top:26px;}
+.availability-cta .btn{white-space:normal;text-align:center;}
+@media(max-width:640px){
+  .availability{padding:90px 0;}
+  .calendar-panel{padding:18px 12px;}
+  .calendar-day{min-height:48px;font-size:13px;}
+  .calendar-weekdays span{font-size:9px;}
+  .calendar-toolbar{gap:10px;margin-bottom:16px;}
+  .calendar-nav{width:42px;height:42px;flex-basis:42px;}
+  .calendar-legend{gap:12px;font-size:11px;}
+}
+
 /* ============ CTA ============ */
 .cta{padding:170px 0;text-align:center;position:relative;overflow:hidden;}
 .cta::before{
@@ -558,6 +598,7 @@ footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
       <a href="#experiencias">Experiências</a>
       <a href="#galeria">Galeria</a>
       <a href="#videos">Vídeos</a>
+      <a href="#agenda">Agenda</a>
       <a href="#contato">Contato</a>
     </nav>
     <div class="header-actions">
@@ -584,6 +625,7 @@ footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
   <a href="#experiencias">Experiências</a>
   <a href="#galeria">Galeria</a>
   <a href="#videos">Vídeos</a>
+  <a href="#agenda">Agenda</a>
   <a href="#contato">Contato</a>
   <a href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20evento." target="_blank" rel="noopener" class="btn btn-primary">Solicitar orçamento</a>
 </nav>
@@ -874,6 +916,39 @@ footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
       <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener"><img src="img/21-distribuicao-yopro.jpeg" alt="" loading="lazy"></a>
       <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener"><img src="img/10-acao-restaurante-TURATTI.jpeg" alt="" loading="lazy"></a>
       <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener"><img src="img/12-corrida-construcao.jpeg" alt="" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLIC AVAILABILITY CALENDAR ============ -->
+<section class="availability" id="agenda" aria-labelledby="availabilityTitle">
+  <div class="wrap">
+    <div class="availability-head reveal">
+      <div>
+        <span class="eyebrow">Disponibilidade</span>
+        <h2 class="section-title" id="availabilityTitle">AGENDA <span class="outline">PROFISSIONAL</span></h2>
+        <p class="section-sub">Consulte os dias em que Adrian já tem compromisso e encontre uma data para o seu evento.</p>
+      </div>
+    </div>
+    <div class="calendar-panel reveal" aria-label="Calendário de disponibilidade">
+      <div class="calendar-toolbar">
+        <button class="calendar-nav" id="calendarPrevious" type="button" aria-label="Mês anterior">‹</button>
+        <h3 id="calendarMonth" aria-live="polite"></h3>
+        <button class="calendar-nav" id="calendarNext" type="button" aria-label="Próximo mês">›</button>
+      </div>
+      <div class="calendar-weekdays" aria-hidden="true">
+        <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span>
+      </div>
+      <div class="calendar-grid" id="calendarDays" role="grid" aria-label="Dias do mês"></div>
+      <div class="calendar-legend" aria-label="Legenda do calendário">
+        <span><i class="calendar-swatch free" aria-hidden="true"></i> Disponível</span>
+        <span><i class="calendar-swatch busy" aria-hidden="true"></i> Ocupado</span>
+        <span><i class="calendar-swatch today" aria-hidden="true"></i> Hoje</span>
+      </div>
+      <p class="calendar-status" id="calendarStatus" role="status" aria-live="polite">Consultando disponibilidade…</p>
+      <div class="availability-cta">
+        <a class="btn btn-outline" href="https://wa.me/5585989229918?text=Ol%C3%A1%2C%20Adrian!%20Gostaria%20de%20consultar%20uma%20data%20para%20meu%20evento." target="_blank" rel="noopener">Consultar uma data pelo WhatsApp</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1204,5 +1279,7 @@ footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
 
 })();
 </script>
+<script type="module" src="agenda.js"></script>
 </body>
 </html>
+
