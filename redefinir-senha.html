@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Definir nova senha | Promotor Adrian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <a class="back-link" href="/admin.html">← Voltar ao acesso administrativo</a>
+    <header class="admin-heading">
+      <span class="eyebrow">Promotor Adrian</span>
+      <h1>Nova <span>senha</span></h1>
+      <p>Defina uma nova senha para acessar a agenda administrativa.</p>
+    </header>
+    <section class="admin-card recovery-card" aria-labelledby="passwordTitle">
+      <h2 id="passwordTitle">Atualizar senha</h2>
+      <form id="passwordForm" hidden>
+        <label for="newPassword">Nova senha (mínimo de 8 caracteres)</label>
+        <input id="newPassword" name="password" type="password" autocomplete="new-password" minlength="8" required>
+        <label for="confirmPassword">Confirmar nova senha</label>
+        <input id="confirmPassword" name="password_confirmation" type="password" autocomplete="new-password" minlength="8" required>
+        <button class="button button-primary" type="submit">Salvar nova senha</button>
+      </form>
+      <p class="notice" id="passwordStatus" role="status" aria-live="polite">Validando o link seguro…</p>
+    </section>
+  </main>
+  <script type="module" src="password-update.js"></script>
+</body>
+</html>
+
