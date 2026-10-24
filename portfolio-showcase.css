@@ -11,6 +11,7 @@ body.portfolio-page{min-height:100vh;background:radial-gradient(ellipse at 88% 8
 .portfolio-page .portfolio-header{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.55fr);align-items:end;gap:40px;max-width:none;margin:76px 0 38px}
 .portfolio-page .portfolio-eyebrow{color:var(--portfolio-rust);font-size:10px;font-weight:600;letter-spacing:.22em}
 .portfolio-page .portfolio-header h1{max-width:900px;margin:12px 0 14px;font:500 clamp(42px,7.3vw,88px)/.98 Manrope,sans-serif;letter-spacing:-.055em;text-transform:none;color:var(--portfolio-ink)}
+.portfolio-page .portfolio-header h1{background:linear-gradient(105deg,var(--portfolio-ink) 15%,var(--portfolio-rust) 82%,#c1824f);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .portfolio-page .portfolio-header h1 em{font-style:normal;color:var(--portfolio-rust)}
 .portfolio-page .portfolio-header p{max-width:410px;color:var(--portfolio-muted);font-size:14px;line-height:1.7;margin:0 0 5px}
 .portfolio-page .portfolio-topics{gap:8px;margin-bottom:22px;border:0;padding:0;align-items:center}
