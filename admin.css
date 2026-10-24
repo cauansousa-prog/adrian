@@ -23,6 +23,10 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(-
 .button-secondary{background:transparent;color:var(--white);}
 .button-secondary:hover{background:rgba(255,255,255,.08);}
 #loginForm .button{width:100%;margin-top:4px;}
+.recovery-link{margin:14px 0 0;text-align:center;font-size:13px;}
+.recovery-link a{color:var(--muted);text-underline-offset:3px;}
+.recovery-link a:hover{color:var(--white);}
+.recovery-card .button{width:100%;}
 .panel-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:30px;}
 .panel-heading h2{margin-bottom:8px;}
 .panel-heading p{margin:0;}
