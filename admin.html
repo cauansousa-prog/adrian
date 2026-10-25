@@ -11,17 +11,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
 </head>
-<body>
+<body class="admin-page">
   <main class="admin-shell">
-    <a class="back-link" href="/">← Voltar ao site</a>
+    <header class="admin-topbar">
+      <a class="back-link" href="/">← Voltar ao site</a>
+      <a class="admin-wordmark" href="/" aria-label="Promotor Adrian, início">ADRIAN<span>RODRIGUES</span></a>
+      <span class="admin-private-mark">ÁREA ADMINISTRATIVA</span>
+    </header>
     <header class="admin-heading">
-      <span class="eyebrow">Promotor Adrian</span>
-      <h1>Gestão da <span>agenda</span></h1>
-      <p>Acesse com a conta autorizada para bloquear ou liberar datas de eventos.</p>
+      <span class="eyebrow">PROMOTOR ADRIAN · FORTALEZA, CE</span>
+      <h1>GESTÃO DA <span>AGENDA.</span></h1>
+      <p>Organize seus compromissos e mantenha seu portfólio sempre atualizado.</p>
     </header>
 
-    <section class="admin-card" id="loginPanel" aria-labelledby="loginTitle">
-      <h2 id="loginTitle">Acesso administrativo</h2>
+    <section class="login-layout" id="loginPanel" aria-labelledby="loginTitle">
+      <div class="login-story">
+        <p class="story-kicker">SEU ESPAÇO DE GESTÃO</p>
+        <h2>Presença em cada evento.<br><em>Controle em cada detalhe.</em></h2>
+        <p>Cuide da sua disponibilidade, das imagens e dos vídeos que representam seu trabalho.</p>
+        <div class="story-sections"><span>01&nbsp; AGENDA</span><span>02&nbsp; PORTFÓLIO</span></div>
+        <span class="story-signature">ADRIAN RODRIGUES</span>
+      </div>
+      <div class="login-card">
+      <p class="login-card-kicker">ACESSO SEGURO</p>
+      <h2 id="loginTitle">Entre no seu painel</h2>
       <form id="loginForm">
         <label for="adminEmail">E-mail</label>
         <input id="adminEmail" name="email" type="email" autocomplete="username" required>
@@ -31,6 +44,7 @@
       </form>
       <p class="recovery-link"><a href="/recuperar-senha.html">Esqueci minha senha</a></p>
       <p class="notice" id="loginStatus" role="status" aria-live="polite"></p>
+      </div>
     </section>
 
     <section class="admin-card" id="managementPanel" aria-labelledby="managementTitle" hidden>
