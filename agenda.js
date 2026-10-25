@@ -17,6 +17,7 @@ daysElement.insertAdjacentElement('afterend', detailsElement);
 
 let visibleMonth;
 let selectedDayKey;
+let selectedSlotIndex = null;
 let currentState = 'loading';
 let busyRanges = [];
 let requestSequence = 0;
@@ -50,21 +51,21 @@ function timeLabel(time) {
 function occupiedTimesForDate(key) {
   return busyRanges.flatMap((range) => {
     if (range.start_date > key || range.end_date < key) return [];
-    if (!range.start_time && !range.end_time) return [{ label: 'dia todo', compact: 'Dia todo' }];
-    if (!range.start_time || !range.end_time) return [{ label: 'dia todo', compact: 'Dia todo' }];
+    if (!range.start_time && !range.end_time) return [{ label: 'dia todo', compact: 'Dia todo', sortTime: range.start_date === key ? '00:00' : (range.start_time || '00:00') }];
+    if (!range.start_time || !range.end_time) return [{ label: 'dia todo', compact: 'Dia todo', sortTime: range.start_date === key ? '00:00' : (range.start_time || '00:00') }];
 
     if (range.start_date === range.end_date) {
-      return [{ label: `das ${timeLabel(range.start_time)} às ${timeLabel(range.end_time)}`, compact: `${timeLabel(range.start_time)}–${timeLabel(range.end_time)}` }];
+      return [{ label: `das ${timeLabel(range.start_time)} às ${timeLabel(range.end_time)}`, compact: `${timeLabel(range.start_time)}–${timeLabel(range.end_time)}`, sortTime: range.start_time }];
     }
     if (key === range.start_date) {
-      return [{ label: `a partir de ${timeLabel(range.start_time)}`, compact: `Após ${timeLabel(range.start_time)}` }];
+      return [{ label: `a partir de ${timeLabel(range.start_time)}`, compact: `Após ${timeLabel(range.start_time)}`, sortTime: range.start_time }];
     }
     if (key === range.end_date) {
       if (range.end_time.startsWith('00:00')) return [];
-      return [{ label: `até ${timeLabel(range.end_time)}`, compact: `Até ${timeLabel(range.end_time)}` }];
+      return [{ label: `até ${timeLabel(range.end_time)}`, compact: `Até ${timeLabel(range.end_time)}`, sortTime: '00:00' }];
     }
-    return [{ label: 'dia todo', compact: 'Dia todo' }];
-  });
+    return [{ label: 'dia todo', compact: 'Dia todo', sortTime: range.start_date === key ? '00:00' : (range.start_time || '00:00') }];
+  }).sort((left, right) => left.sortTime.localeCompare(right.sortTime));
 }
 
 function renderDayDetails() {
@@ -75,9 +76,19 @@ function renderDayDetails() {
 
   const date = dateFromKey(selectedDayKey);
   const occupied = occupiedTimesForDate(selectedDayKey);
-  detailsElement.textContent = occupied.length
-    ? `${dateFormatter.format(date)} · horários ocupados: ${occupied.map(({ label }) => label).join('; ')}.`
-    : `${dateFormatter.format(date)} · nenhum horário ocupado. Consulte a agenda pelo WhatsApp para combinar seu evento.`;
+  if (!occupied.length) {
+    detailsElement.textContent = `${dateFormatter.format(date)} · nenhum horário ocupado. Consulte a agenda pelo WhatsApp para combinar seu evento.`;
+    return;
+  }
+
+  if (selectedSlotIndex !== null && occupied[selectedSlotIndex]) {
+    const selected = occupied[selectedSlotIndex];
+    const others = occupied.filter((_, index) => index !== selectedSlotIndex);
+    detailsElement.textContent = `${dateFormatter.format(date)} · faixa selecionada: ${selected.label}. Este período está ocupado.${others.length ? ` Outros horários ocupados: ${others.map(({ label }) => label).join('; ')}.` : ''}`;
+    return;
+  }
+
+  detailsElement.textContent = `${dateFormatter.format(date)} · horários ocupados: ${occupied.map(({ label }) => label).join('; ')}. Toque em um horário para ver os detalhes.`;
 }
 
 function renderCalendar() {
@@ -94,39 +105,69 @@ function renderCalendar() {
     const day = new Date(gridStart);
     day.setDate(gridStart.getDate() + index);
     const key = dateKey(day);
-    const button = document.createElement('button');
     const sameMonth = day.getMonth() === visibleMonth.getMonth();
     const occupied = currentState === 'loaded' ? occupiedTimesForDate(key) : [];
     const busy = occupied.length > 0;
     const dayStatus = currentState !== 'loaded'
       ? 'disponibilidade não consultada'
       : (busy ? `ocupado ${occupied.map(({ label }) => label).join(' e ')}` : 'sem horários ocupados');
-    button.type = 'button';
-    button.className = 'calendar-day';
-    button.textContent = String(day.getDate());
-    if (busy) {
-      const hours = document.createElement('span');
-      hours.className = 'calendar-day-hours';
-      hours.textContent = occupied.length > 1 ? `${occupied[0].compact} +${occupied.length - 1}` : occupied[0].compact;
-      button.append(hours);
-    }
-    button.setAttribute('aria-label', `${dateFormatter.format(day)}: ${dayStatus}`);
-    button.disabled = currentState !== 'loaded' || !sameMonth;
+    const dayCell = document.createElement(busy && sameMonth ? 'div' : 'button');
+    if (dayCell.tagName === 'BUTTON') dayCell.type = 'button';
+    dayCell.className = 'calendar-day';
+    dayCell.setAttribute('aria-label', `${dateFormatter.format(day)}: ${dayStatus}`);
 
-    if (!sameMonth) button.classList.add('outside-month');
-    if (currentState !== 'loaded') button.classList.add('is-unknown');
-    else button.classList.add(busy ? 'is-busy' : 'is-free');
-    if (key === todayKey) {
-      button.classList.add('is-today');
-      button.setAttribute('aria-current', 'date');
+    if (busy && sameMonth) {
+      const dateButton = document.createElement('button');
+      dateButton.type = 'button';
+      dateButton.className = 'calendar-date-select';
+      dateButton.textContent = String(day.getDate());
+      dateButton.setAttribute('aria-label', `${dateFormatter.format(day)}: ocupado. Selecionar o dia.`);
+      dateButton.setAttribute('aria-pressed', String(key === selectedDayKey));
+      dateButton.addEventListener('click', () => {
+        selectedDayKey = key;
+        selectedSlotIndex = null;
+        renderCalendar();
+      });
+
+      const timeList = document.createElement('span');
+      timeList.className = 'calendar-hour-list';
+      occupied.forEach((interval, intervalIndex) => {
+        const slot = document.createElement('button');
+        slot.type = 'button';
+        slot.className = 'calendar-time-slot';
+        slot.textContent = interval.compact;
+        slot.setAttribute('aria-label', `${dateFormatter.format(day)}: ${interval.label} ocupado. Toque para ver detalhes.`);
+        slot.setAttribute('aria-pressed', String(key === selectedDayKey && intervalIndex === selectedSlotIndex));
+        if (key === selectedDayKey && intervalIndex === selectedSlotIndex) slot.classList.add('is-selected');
+        slot.addEventListener('click', () => {
+          selectedDayKey = key;
+          selectedSlotIndex = intervalIndex;
+          renderCalendar();
+        });
+        timeList.append(slot);
+      });
+      dayCell.append(dateButton, timeList);
+    } else {
+      dayCell.textContent = String(day.getDate());
+      dayCell.disabled = currentState !== 'loaded' || !sameMonth;
+      dayCell.addEventListener('click', () => {
+        if (dayCell.disabled) return;
+        selectedDayKey = key;
+        selectedSlotIndex = null;
+        renderCalendar();
+      });
     }
-    if (key === selectedDayKey) button.classList.add('is-selected');
-    button.addEventListener('click', () => {
-      if (button.disabled) return;
-      selectedDayKey = key;
-      renderCalendar();
-    });
-    daysElement.appendChild(button);
+
+    if (!sameMonth) dayCell.classList.add('outside-month');
+    if (currentState !== 'loaded') dayCell.classList.add('is-unknown');
+    else dayCell.classList.add(busy ? 'is-busy' : 'is-free');
+    if (key === todayKey) {
+      dayCell.classList.add('is-today');
+      if (dayCell.tagName === 'BUTTON') dayCell.setAttribute('aria-current', 'date');
+      else dayCell.querySelector('.calendar-date-select')?.setAttribute('aria-current', 'date');
+    }
+    if (key === selectedDayKey) dayCell.classList.add('is-selected');
+    daysElement.appendChild(dayCell);
   }
 
   previousButton.disabled = currentState === 'loading';
@@ -188,12 +229,14 @@ async function loadAvailability() {
 previousButton.addEventListener('click', () => {
   visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1);
   selectedDayKey = dateKey(visibleMonth);
+  selectedSlotIndex = null;
   loadAvailability();
 });
 
 nextButton.addEventListener('click', () => {
   visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
   selectedDayKey = dateKey(visibleMonth);
+  selectedSlotIndex = null;
   loadAvailability();
 });
 
