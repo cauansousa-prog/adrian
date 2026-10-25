@@ -485,6 +485,11 @@ nav.main-nav a:hover::after{width:100%;}
 .calendar-weekdays{margin-bottom:8px;}
 .calendar-weekdays span{text-align:center;color:var(--gray);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 2px;}
 .calendar-day{position:relative;min-height:66px;border:1px solid var(--border-soft);background:rgba(255,255,255,.015);color:var(--gray-light);font-size:14px;display:flex;align-items:center;justify-content:center;}
+.calendar-day{flex-direction:column;gap:2px;padding:3px 1px;}
+.calendar-day-hours{display:block;max-width:100%;overflow:hidden;color:inherit;font-size:clamp(7px,1vw,9px);font-weight:700;line-height:1.15;white-space:nowrap;text-overflow:ellipsis;}
+.calendar-day.is-selected{outline:2px solid rgba(255,255,255,.78);outline-offset:-3px;}
+.calendar-day-details{min-height:42px;margin:16px 0 0;padding:12px 14px;border-left:2px solid var(--gold);background:rgba(255,255,255,.035);color:var(--gray-light);font-size:13px;line-height:1.55;}
+.calendar-day-details[data-state="error"]{border-color:var(--red);}
 .calendar-day:not(:disabled):hover{border-color:rgba(255,255,255,.42);}
 .calendar-day.outside-month{opacity:.32;}
 .calendar-day.is-free{background:rgba(62,151,102,.13);color:#b8edcb;}
