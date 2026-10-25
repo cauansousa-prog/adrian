@@ -65,3 +65,23 @@ body.portfolio-page{min-height:100vh;background:radial-gradient(ellipse at 88% 8
  .portfolio-page .media-viewer{padding:12px}
 }
 @media(prefers-reduced-motion:reduce){.portfolio-page .portfolio-card img,.portfolio-page .portfolio-card video{transition:none}}
+
+/* Tighten the editorial title and make the media grid uniform. */
+.portfolio-page .portfolio-header{display:block;max-width:100%;margin:76px 0 38px}
+.portfolio-page .portfolio-eyebrow{display:block}
+.portfolio-page .portfolio-header h1{max-width:100%;text-wrap:balance}
+.portfolio-page .portfolio-header p{max-width:580px;margin-top:16px}
+.portfolio-page .portfolio-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;grid-auto-flow:row;align-items:stretch;gap:15px}
+.portfolio-page .portfolio-grid .portfolio-card:nth-child(n){grid-column:auto;grid-row:auto;aspect-ratio:4/3;width:100%;height:auto;min-height:0}
+.portfolio-page .portfolio-grid .portfolio-card img,.portfolio-page .portfolio-grid .portfolio-card video{width:100%;height:100%;object-fit:cover;object-position:center}
+@media(max-width:800px){
+ .portfolio-page .portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:12px}
+ .portfolio-page .portfolio-grid .portfolio-card:nth-child(n){grid-column:auto;grid-row:auto;aspect-ratio:4/3}
+}
+@media(max-width:540px){
+ .portfolio-page .portfolio-header{margin:48px 0 24px}
+ .portfolio-page .portfolio-header h1{font-size:clamp(38px,10vw,56px)}
+ .portfolio-page .portfolio-header p{margin-top:13px}
+ .portfolio-page .portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .portfolio-page .portfolio-grid .portfolio-card:nth-child(n){aspect-ratio:4/3}
+}
