@@ -5,7 +5,7 @@ Site estático em HTML, CSS e JavaScript. O calendário público consulta apenas
 ## Configuração do Supabase
 
 1. O projeto Supabase dedicado a este site é `adrian` (`nwdwldhzcyrzkmywykzo`). A migração abaixo já foi aplicada nesse projeto; mantenha o arquivo versionado para reproduzir e auditar a estrutura em outros ambientes.
-2. `supabase/migrations/20261024000000_calendar_availability.sql` cria `availability_admins` e `availability_blocks`, ativa RLS, limita a consulta pública às colunas de data e restringe gravações a administradores autorizados. Os intervalos são inclusivos e não podem se sobrepor.
+2. As migrações em `supabase/migrations/` criam as tabelas da agenda com RLS e restringem gravações a administradores autorizados. Os bloqueios podem ser de dia inteiro ou conter horários; intervalos ocupados não podem se sobrepor. A migração `20261025010000_availability_time_ranges.sql` mantém bloqueios antigos como dia inteiro e expõe ao público apenas datas e horários ocupados.
 3. Em **Authentication → Providers → Email**, mantenha o cadastro público desativado. Crie a conta de Adrian pelo painel do Supabase Auth; não há cadastro no site.
 4. Autorize a conta inserindo seu UUID, obtido na lista de usuários do Auth, no SQL Editor:
 
