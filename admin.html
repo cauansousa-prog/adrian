@@ -68,7 +68,21 @@
             <input id="endDate" name="end_date" type="date" required>
           </div>
         </div>
-        <p class="form-hint">Para um único dia, repita a mesma data nos dois campos.</p>
+        <div class="date-fields time-fields">
+          <div>
+            <label for="startTime">Horário inicial</label>
+            <input id="startTime" name="start_time" type="time" required>
+          </div>
+          <div>
+            <label for="endTime">Horário final</label>
+            <input id="endTime" name="end_time" type="time" required>
+          </div>
+        </div>
+        <label class="all-day-option" for="allDay">
+          <input id="allDay" name="all_day" type="checkbox">
+          <span>Bloquear o dia inteiro</span>
+        </label>
+        <p class="form-hint">Em períodos, o horário inicial vale no primeiro dia e o final no último; os dias entre eles ficam ocupados o dia todo. Marque dia inteiro para compromissos sem horário específico.</p>
         <div class="form-actions">
           <button class="button button-primary" id="saveBlockButton" type="submit">Bloquear período</button>
           <button class="button button-secondary" id="cancelEditButton" type="button" hidden>Cancelar edição</button>
@@ -129,7 +143,7 @@
         <ul class="media-list" id="portfolioMediaList"></ul>
       </section>
     </section>
-    <p class="admin-footnote">A agenda pública mostra apenas as datas ocupadas, sem detalhes dos eventos.</p>
+    <p class="admin-footnote">A agenda pública mostra os horários ocupados, sem detalhes dos eventos.</p>
   </main>
   <script type="module" src="admin.js"></script>
   <script type="module" src="portfolio-admin.js"></script>

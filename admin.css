@@ -165,3 +165,12 @@ body.admin-page{
  .admin-page .media-item-actions .button{flex:1}
 }
 [hidden]{display:none!important}
+
+
+/* Faixas de horario na gestao da agenda */
+.admin-page .time-fields{margin-top:14px}
+.admin-page .all-day-option{display:flex;align-items:center;gap:10px;width:fit-content;min-height:44px;margin:10px 0 0;color:var(--admin-ink);font-size:12px;letter-spacing:.04em;text-transform:none;cursor:pointer}
+.admin-page .all-day-option input{width:20px;height:20px;min-height:20px;margin:0;accent-color:var(--admin-rust)}
+.admin-page .all-day-option span{font-size:12px;letter-spacing:.04em;text-transform:none}
+.admin-page input:disabled{opacity:.55;cursor:not-allowed}
+.admin-page .form-hint{max-width:760px;line-height:1.55}

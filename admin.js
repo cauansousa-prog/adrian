@@ -11,6 +11,9 @@ const blockForm = document.getElementById('blockForm');
 const blockId = document.getElementById('blockId');
 const startDate = document.getElementById('startDate');
 const endDate = document.getElementById('endDate');
+const startTime = document.getElementById('startTime');
+const endTime = document.getElementById('endTime');
+const allDay = document.getElementById('allDay');
 const blockList = document.getElementById('blockList');
 const saveBlockButton = document.getElementById('saveBlockButton');
 const cancelEditButton = document.getElementById('cancelEditButton');
@@ -22,8 +25,8 @@ function setMessage(element, message, state) {
 }
 
 function translateError(error) {
-  if (error?.code === '23P01') return 'Esse período se sobrepõe a outro bloqueio. Ajuste as datas e tente novamente.';
-  if (error?.code === '23514') return 'A data final deve ser igual ou posterior à data inicial.';
+  if (error?.code === '23P01') return 'Esse horário se sobrepõe a outro compromisso. Ajuste o período e tente novamente.';
+  if (error?.code === '23514') return 'Confira o intervalo e os horários informados.';
   if (error?.code === '23505') return 'Este bloqueio já existe.';
   if (error?.status === 401 || error?.status === 403 || error?.code === 'PGRST301') {
     return 'Sua sessão expirou ou não tem autorização. Entre novamente para continuar.';
@@ -45,9 +48,18 @@ function showSignedIn() {
   setMessage(loginStatus, '', '');
 }
 
+function syncTimeInputs() {
+  const disabled = allDay.checked;
+  [startTime, endTime].forEach((input) => {
+    input.disabled = disabled;
+    input.required = !disabled;
+  });
+}
+
 function resetBlockForm() {
   blockForm.reset();
   blockId.value = '';
+  syncTimeInputs();
   saveBlockButton.textContent = 'Bloquear período';
   cancelEditButton.hidden = true;
 }
@@ -56,8 +68,16 @@ function formatRange(block) {
   const start = new Date(`${block.start_date}T12:00:00`);
   const end = new Date(`${block.end_date}T12:00:00`);
   const format = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' });
-  if (block.start_date === block.end_date) return format.format(start);
-  return `${format.format(start)} a ${format.format(end)}`;
+  const startDateLabel = format.format(start);
+  const endDateLabel = format.format(end);
+  const timeLabel = block.start_time && block.end_time
+    ? (block.start_date === block.end_date
+      ? ` · ${block.start_time.slice(0, 5)} às ${block.end_time.slice(0, 5)}`
+      : ` · ${block.start_time.slice(0, 5)} no primeiro dia até ${block.end_time.slice(0, 5)} no último`)
+    : ' · dia todo';
+  return block.start_date === block.end_date
+    ? `${startDateLabel}${timeLabel}`
+    : `${startDateLabel} a ${endDateLabel}${timeLabel}`;
 }
 
 function makeAction(label, className, callback) {
@@ -74,8 +94,9 @@ async function loadBlocks() {
   blockList.replaceChildren();
   const { data, error } = await client
     .from('availability_blocks')
-    .select('id,start_date,end_date')
-    .order('start_date', { ascending: true });
+    .select('id,start_date,end_date,start_time,end_time')
+    .order('start_date', { ascending: true })
+    .order('start_time', { ascending: true, nullsFirst: true });
 
   if (error) {
     setMessage(listStatus, translateError(error), 'error');
@@ -103,6 +124,10 @@ async function loadBlocks() {
         blockId.value = block.id;
         startDate.value = block.start_date;
         endDate.value = block.end_date;
+        startTime.value = block.start_time?.slice(0, 5) || '';
+        endTime.value = block.end_time?.slice(0, 5) || '';
+        allDay.checked = !block.start_time && !block.end_time;
+        syncTimeInputs();
         saveBlockButton.textContent = 'Salvar alterações';
         cancelEditButton.hidden = false;
         setMessage(adminStatus, 'Edite as datas acima e salve as alterações.', '');
@@ -184,8 +209,14 @@ blockForm.addEventListener('submit', async (event) => {
   if (!client) return;
   const start = startDate.value;
   const end = endDate.value;
+  const startHour = startTime.value;
+  const endHour = endTime.value;
   if (!start || !end || end < start) {
     setMessage(adminStatus, 'Informe um intervalo válido: a data final não pode vir antes da inicial.', 'error');
+    return;
+  }
+  if (!allDay.checked && (!startHour || !endHour || (start === end && endHour <= startHour))) {
+    setMessage(adminStatus, 'Informe os dois horários. No mesmo dia, o horário final deve ser posterior ao inicial.', 'error');
     return;
   }
 
@@ -198,7 +229,12 @@ blockForm.addEventListener('submit', async (event) => {
     return;
   }
 
-  const values = { start_date: start, end_date: end };
+  const values = {
+    start_date: start,
+    end_date: end,
+    start_time: allDay.checked ? null : startHour,
+    end_time: allDay.checked ? null : endHour,
+  };
   const request = blockId.value
     ? client.from('availability_blocks').update(values).eq('id', blockId.value).select('id').maybeSingle()
     : client.from('availability_blocks').insert({ ...values, created_by: userData.user.id }).select('id').single();
@@ -215,6 +251,17 @@ blockForm.addEventListener('submit', async (event) => {
   setMessage(adminStatus, 'Período salvo. A agenda pública foi atualizada.', 'success');
   await loadBlocks();
 });
+
+allDay.addEventListener('change', syncTimeInputs);
+startDate.addEventListener('change', () => {
+  endDate.min = startDate.value;
+  if (endDate.value && endDate.value < startDate.value) endDate.value = startDate.value;
+});
+endDate.addEventListener('change', () => {
+  if (startDate.value) endDate.min = startDate.value;
+});
+
+syncTimeInputs();
 
 cancelEditButton.addEventListener('click', () => {
   resetBlockForm();
