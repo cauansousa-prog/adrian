@@ -164,7 +164,7 @@ function renderCalendar() {
     if (key === todayKey) {
       dayCell.classList.add('is-today');
       if (dayCell.tagName === 'BUTTON') dayCell.setAttribute('aria-current', 'date');
-      else dateButtonForToday(dayCell);
+      else dayCell.querySelector('.calendar-date-select')?.setAttribute('aria-current', 'date');
     }
     if (key === selectedDayKey) dayCell.classList.add('is-selected');
     daysElement.appendChild(dayCell);
@@ -236,6 +236,7 @@ previousButton.addEventListener('click', () => {
 nextButton.addEventListener('click', () => {
   visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1);
   selectedDayKey = dateKey(visibleMonth);
+  selectedSlotIndex = null;
   loadAvailability();
 });
 
