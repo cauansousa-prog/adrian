@@ -485,9 +485,13 @@ nav.main-nav a:hover::after{width:100%;}
 .calendar-weekdays{margin-bottom:8px;}
 .calendar-weekdays span{text-align:center;color:var(--gray);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:8px 2px;}
 .calendar-day{position:relative;min-height:66px;border:1px solid var(--border-soft);background:rgba(255,255,255,.015);color:var(--gray-light);font-size:14px;display:flex;align-items:center;justify-content:center;}
-.calendar-day{flex-direction:column;gap:2px;padding:3px 1px;}
-.calendar-day-hours{display:block;max-width:100%;overflow:hidden;color:inherit;font-size:clamp(7px,1vw,9px);font-weight:700;line-height:1.15;white-space:nowrap;text-overflow:ellipsis;}
+.calendar-day{flex-direction:column;gap:3px;padding:3px 2px;}
 .calendar-day.is-selected{outline:2px solid rgba(255,255,255,.78);outline-offset:-3px;}
+.calendar-hour-list{display:grid;width:100%;gap:2px;}
+.calendar-date-select{width:100%;min-height:22px;padding:0;border:0;background:transparent;color:inherit;font-size:14px;line-height:1.2;font-weight:inherit;}
+.calendar-time-slot{display:block;width:100%;min-height:24px;padding:3px 1px;border:1px solid transparent;border-radius:2px;background:rgba(0,0,0,.08);color:inherit;font-size:clamp(7px,1vw,9px);font-weight:700;line-height:1.1;white-space:nowrap;}
+.calendar-time-slot:hover,.calendar-time-slot.is-selected{border-color:currentColor;background:rgba(255,255,255,.12);}
+.calendar-date-select:focus-visible,.calendar-time-slot:focus-visible{outline:2px solid var(--white);outline-offset:-2px;}
 .calendar-day-details{min-height:42px;margin:16px 0 0;padding:12px 14px;border-left:2px solid var(--gold);background:rgba(255,255,255,.035);color:var(--gray-light);font-size:13px;line-height:1.55;}
 .calendar-day-details[data-state="error"]{border-color:var(--red);}
 .calendar-day:not(:disabled):hover{border-color:rgba(255,255,255,.42);}
@@ -680,9 +684,9 @@ footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
       </div>
 
       <div class="hero-social">
-        <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener" aria-label="Instagram de Adrian: @promovedor.adrian">
+        <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener" aria-label="Instagram de Adrian: @promotor.adrian">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          @promovedor.adrian
+          @promotor.adrian
         </a>
         <a href="https://wa.me/5585989229918" target="_blank" rel="noopener" aria-label="WhatsApp de Adrian">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.72-4.12-4.87-4.31-.14-.19-1.17-1.55-1.17-2.96s.73-2.1 1-2.39c.26-.28.57-.35.76-.35h.55c.18 0 .41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.52-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.55.73 1.82.86.27.14.44.2.51.31.07.12.07.65-.17 1.33z"/></svg>
@@ -833,7 +837,7 @@ footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
   <div class="wrap ig-inner">
     <div class="reveal">
       <p class="eyebrow">Acompanhe o Adrian</p>
-      <h3 class="ig-handle">@promovedor.adrian</h3>
+      <h3 class="ig-handle">@promotor.adrian</h3>
       <p class="ig-text">Bastidores, eventos, ações e novos projetos.</p>
       <a href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener" class="btn btn-outline">Seguir no Instagram</a>
     </div>
@@ -949,7 +953,7 @@ footer{padding:70px 0 34px;border-top:1px solid var(--border-soft);}
       </a>
       <a class="quick-item" href="https://www.instagram.com/promotor.adrian" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        <div><div class="qi-label">Instagram</div><div class="qi-value">@promovedor.adrian</div></div>
+        <div><div class="qi-label">Instagram</div><div class="qi-value">@promotor.adrian</div></div>
       </a>
     </div>
   </div>
