@@ -85,3 +85,59 @@ body.portfolio-page{min-height:100vh;background:radial-gradient(ellipse at 88% 8
  .portfolio-page .portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
  .portfolio-page .portfolio-grid .portfolio-card:nth-child(n){aspect-ratio:4/3}
 }
+
+/* Strong editorial display type and fine ruled topic navigation. */
+.portfolio-page .portfolio-header h1{
+ font:800 clamp(44px,7.2vw,88px)/.98 Manrope,sans-serif;
+ letter-spacing:-.045em;
+ text-transform:uppercase;
+ text-wrap:balance;
+ background-image:linear-gradient(105deg,var(--portfolio-ink) 12%,var(--portfolio-ink) 55%,var(--portfolio-rust) 82%,#c1824f);
+}
+.portfolio-page .portfolio-topics{
+ display:flex;
+ gap:0;
+ align-items:stretch;
+ margin:0 0 22px;
+ padding:0;
+ border-top:1px solid rgba(40,34,29,.22);
+ border-bottom:1px solid rgba(40,34,29,.22);
+}
+.portfolio-page .portfolio-topics a{
+ position:relative;
+ display:flex;
+ align-items:center;
+ min-height:48px;
+ padding:12px 22px;
+ border:0;
+ border-right:1px solid rgba(40,34,29,.18);
+ border-radius:0;
+ color:var(--portfolio-muted);
+ background:transparent;
+ font-size:10px;
+ font-weight:600;
+ letter-spacing:.14em;
+}
+.portfolio-page .portfolio-topics a:first-child{border-left:1px solid rgba(40,34,29,.18)}
+.portfolio-page .portfolio-topics a:hover{
+ color:var(--portfolio-rust);
+ background:rgba(166,79,52,.045);
+}
+.portfolio-page .portfolio-topics a[aria-current=page]{
+ color:var(--portfolio-rust);
+ background:transparent;
+ border-color:rgba(40,34,29,.18);
+}
+.portfolio-page .portfolio-topics a[aria-current=page]::after{
+ content:"";
+ position:absolute;
+ left:0;
+ right:0;
+ bottom:-1px;
+ height:2px;
+ background:var(--portfolio-rust);
+}
+@media(max-width:540px){
+ .portfolio-page .portfolio-header h1{font-size:clamp(38px,10vw,60px)}
+ .portfolio-page .portfolio-topics a{min-height:46px;padding:11px 14px;font-size:9px;letter-spacing:.1em}
+}
